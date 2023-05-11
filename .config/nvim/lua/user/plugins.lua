@@ -91,7 +91,7 @@ return packer.startup(function(use)
   use "tpope/vim-repeat" -- enables . operator to leap and other plugins
   -- Julia Support
   use "JuliaEditorSupport/julia-vim"
-  use "kdheepak/JuliaFormatter.vim"
+  -- use "kdheepak/JuliaFormatter.vim"
   -- Markdown Support
   use "ixru/nvim-markdown"
   use "iamcco/markdown-preview.nvim"
@@ -102,7 +102,8 @@ return packer.startup(function(use)
   -- Comment
   use "numToStr/Comment.nvim"
   use 'JoosepAlviste/nvim-ts-context-commentstring'
-
+  -- Co-pilot
+  -- use "github/copilot.vim"
   -- Docstrings and annotations
   use {
     "danymat/neogen",

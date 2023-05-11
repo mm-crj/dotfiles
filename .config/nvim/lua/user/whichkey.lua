@@ -177,7 +177,8 @@ local mappings = {
   },
   t = {
     name = "Toggle",
-    s = { "<cmd>set spell!<cr>", "Spell check" },
+    a = { "<cmd>ASToggle<cr>", "Auto Save" },
+    s = { "<cmd>set spell!<cr>", "Spell Check" },
   },
   v = {
     name = 'VimTex',
