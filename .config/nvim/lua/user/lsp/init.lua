@@ -41,7 +41,6 @@ lsp.ensure_installed({
   "marksman",
   "sqlls",
   "yamlls",
-  --[[ "julials" ]]
 })
 lsp.configure('julials', {julia_env_path = "~/.julia/environments/v1.8/"
 })

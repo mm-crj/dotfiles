@@ -43,3 +43,4 @@ require('telescope').load_extension('projects')
 require('hlargs').setup()
 require('colorizer').setup()
 require("user.onedark")
+

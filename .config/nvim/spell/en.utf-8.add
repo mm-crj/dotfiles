@@ -12,3 +12,6 @@ Banach
 nonlinear
 pointwise
 mainak
+dataframe
+JLD2
+REPL
