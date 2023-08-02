@@ -80,12 +80,12 @@ local opts = {
 
 
 local mappings = {
-  ["<TAB>"] = { '<cmd>b#<CR>', 'Previous buffer' },
+  -- ["<TAB>"] = { '<cmd>b#<CR>', 'Previous buffer' },
   ["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   b = {
     name = "Buffers",
-    b = { "<cmd>Telescope buffers<cr>", "Find Buffers" },
+    b = { "<cmd>lua require('telescope.builtin').buffers({sort_mru = true, ignore_current_buffer = true})<cr>", "Find Buffers" },
     d = { "<cmd>Bdelete!<CR>", "Close Buffer" },
     f = { "<cmd>lua vim.lsp.buf.format { async = true }<cr>", "Format" },
     h = { "<cmd>Alpha<cr>", "Alpha Home" },
@@ -137,7 +137,7 @@ local mappings = {
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
     d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff", },
-    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+    g = { "<cmd>LazyGit<CR>", "Lazygit" },
     j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
     l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -147,7 +147,7 @@ local mappings = {
     s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
     u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk", },
   },
-  l = {
+  k = {
     name = "LSP",
     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols", },
@@ -170,15 +170,20 @@ local mappings = {
     i = { "<cmd>PackerInstall<cr>", "Install" },
     s = { "<cmd>PackerSync<cr>", "Sync" },
     u = { "<cmd>PackerUpdate<cr>", "Update" },
+    m = { "<cmd>Mason<cr>", "Mason" },
   },
   s = {
     name = "Source",
     l = { "<cmd>source ~/.config/nvim/lua/user/lsp/luasnip.lua<cr>", "LuaSnippets" },
+    t = { "<cmd>lua require('telescope.builtin').buffers({sort_mru = true, ignore_current_buffer = true})<cr>","Telescope Buffers"},
   },
+
+
   t = {
     name = "Toggle",
     a = { "<cmd>ASToggle<cr>", "Auto Save" },
     s = { "<cmd>set spell!<cr>", "Spell Check" },
+    m = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview" },
   },
   v = {
     name = 'VimTex',

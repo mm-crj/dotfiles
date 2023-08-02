@@ -60,7 +60,7 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim"  -- Useful lua functions used by lots of plugins
   use "windwp/nvim-autopairs"  -- Autopairs, integrates with both cmp and treesitter
-  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x',
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.2',
     requires = { 'nvim-lua/plenary.nvim' } }
   use { 'nvim-telescope/telescope-fzf-native.nvim',
     run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release \
@@ -80,9 +80,9 @@ return packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
   use "goolord/alpha-nvim" -- home page
   use { "folke/which-key.nvim" }
-  use "ggandor/leap.nvim"
-  use { "ggandor/flit.nvim", requires = "ggandor/leap.nvim" }
-  use { "kevinhwang91/nvim-ufo", requires = 'kevinhwang91/promise-async' } -- code folding
+  -- use "ggandor/leap.nvim"
+  -- use { "ggandor/flit.nvim", requires = "ggandor/leap.nvim" }
+  -- use { "kevinhwang91/nvim-ufo", requires = 'kevinhwang91/promise-async' } -- code folding
   use "karb94/neoscroll.nvim"
   use "Pocco81/auto-save.nvim"
   use "vladdoster/remember.nvim"
@@ -94,7 +94,10 @@ return packer.startup(function(use)
   -- use "kdheepak/JuliaFormatter.vim"
   -- Markdown Support
   use "ixru/nvim-markdown"
-  use "iamcco/markdown-preview.nvim"
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
   -- Buffers
   use { "akinsho/bufferline.nvim", tag = "v3.*", requires = { 'kyazdani42/nvim-web-devicons' } }
   use "moll/vim-bbye"
@@ -103,7 +106,7 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim"
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   -- Co-pilot
-  -- use "github/copilot.vim"
+  use "github/copilot.vim"
   -- Docstrings and annotations
   use {
     "danymat/neogen",
@@ -161,8 +164,16 @@ return packer.startup(function(use)
   use { 'm-demare/hlargs.nvim', requires = { 'nvim-treesitter/nvim-treesitter' } }
   use { 'norcalli/nvim-colorizer.lua' }
 
-  -- Git
+  -- Gitsigns
   use "lewis6991/gitsigns.nvim"
+  -- lazygit
+  use({
+    "kdheepak/lazygit.nvim",
+    -- optional for floating window border decoration
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+  })
 
   -- Debugging
   use { "mfussenegger/nvim-dap" }

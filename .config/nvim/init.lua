@@ -21,7 +21,7 @@ require("user.nvim-tree") -- file explorer
 require("user.alpha")     -- home screen
 require("user.autosave")
 require("user.remember")  -- remembers last cursor position
-require("user.ufo")       -- folds
+-- require("user.ufo")       -- folds
 require("user.auto-session")
 require("project_nvim").setup()
 
@@ -36,6 +36,7 @@ require("user.lualine")
 
 require('neoscroll').setup() -- smooth scrolling
 
+require("user.telescope")
 require('telescope').load_extension('luasnip')
 require('telescope').load_extension('projects')
 
@@ -43,4 +44,3 @@ require('telescope').load_extension('projects')
 require('hlargs').setup()
 require('colorizer').setup()
 require("user.onedark")
-

@@ -36,7 +36,7 @@ vim.opt.signcolumn =
 "yes"              -- always show the sign column, otherwise it would shift the text each time
 vim.wo.wrap = true -- display lines as one long line
 vim.opt.linebreak = true
-vim.opt.list = false
+vim.opt.list = true
 vim.opt.scrolloff = 999 -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "SauceCodePro Nerd Font Mono:h10"
@@ -60,6 +60,12 @@ vim.g.loaded_netrwPlugin = 1
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions+=tcq]])
+
+-- ufo folding
+-- vim.o.foldcolumn = '1' -- '0' is not bad
+-- vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+-- vim.o.foldlevelstart = 99
+-- vim.o.foldenable = true
 
 -- save folds automatically
 vim.cmd([[

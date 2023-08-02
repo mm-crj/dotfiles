@@ -159,15 +159,15 @@ _G.packer_plugins = {
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   firenvim = {
     loaded = true,
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/firenvim",
     url = "https://github.com/glacambre/firenvim"
-  },
-  ["flit.nvim"] = {
-    loaded = true,
-    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/flit.nvim",
-    url = "https://github.com/ggandor/flit.nvim"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -194,10 +194,10 @@ _G.packer_plugins = {
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/julia-vim",
     url = "https://github.com/JuliaEditorSupport/julia-vim"
   },
-  ["leap.nvim"] = {
+  ["lazygit.nvim"] = {
     loaded = true,
-    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/leap.nvim",
-    url = "https://github.com/ggandor/leap.nvim"
+    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -310,11 +310,6 @@ _G.packer_plugins = {
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
     url = "https://github.com/p00f/nvim-ts-rainbow"
   },
-  ["nvim-ufo"] = {
-    loaded = true,
-    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/nvim-ufo",
-    url = "https://github.com/kevinhwang91/nvim-ufo"
-  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -354,11 +349,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
-  },
-  ["promise-async"] = {
-    loaded = true,
-    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/promise-async",
-    url = "https://github.com/kevinhwang91/promise-async"
   },
   ["remember.nvim"] = {
     loaded = true,
@@ -429,14 +419,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: neogen
-time([[Config for neogen]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vneogen\frequire\0", "config", "neogen")
-time([[Config for neogen]], false)
 -- Config for: telescope-frecency.nvim
 time([[Config for telescope-frecency.nvim]], true)
 try_loadstring("\27LJ\2\nM\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\rfrecency\19load_extension\14telescope\frequire\0", "config", "telescope-frecency.nvim")
 time([[Config for telescope-frecency.nvim]], false)
+-- Config for: neogen
+time([[Config for neogen]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vneogen\frequire\0", "config", "neogen")
+time([[Config for neogen]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

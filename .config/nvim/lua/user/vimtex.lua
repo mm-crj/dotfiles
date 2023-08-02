@@ -16,7 +16,7 @@ vim.cmd([[
 
   let g:vimtex_quickfix_mode=0
   let g:vimtex_quickfix_open_on_warning=0
-  
+
   " Disable custom warnings based on regexp
   let g:vimtex_quickfix_ignore_filters = [
         \ ' Marginpar on page ',
@@ -36,7 +36,7 @@ vim.cmd([[
   let g:vimtex_view_method='zathura'
   " let g:vimtex_view_general_options='--unique @pdf\#src:@tex:@line:@col'
   let g:vimtex_compiler_latexmk = {
-      \ 'build_dir' : 'build',
+      \ 'out_dir' : 'build',
       \ 'callback' : 1,
       \ 'continuous' : 0,
       \ 'executable' : 'latexmk',
@@ -53,4 +53,3 @@ vim.cmd([[
   let g:neomake_enabled_tex_makers = []
   let g:neomake_open_list = 0  " Don't open neomake list automatically
 ]])
-

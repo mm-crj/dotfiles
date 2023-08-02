@@ -106,6 +106,7 @@ source $ZSH/oh-my-zsh.sh
 alias df="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 # alias nvim_app="nvim_app -u /home/mmcrjx/.config/nvim_app/init.lua"
 alias python='python3'
+alias zathura='tabbed -c zathura -e'
 export PATH=$PATH:/usr/local/go/bin
 # alias nvim="NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
 # alias zathura="env GDK_BACKEND=x11 zathura"
@@ -175,4 +176,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
+export PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
+export MANPATH="/usr/local/texlive/2023/texmf-dist/doc/man:$MANPATH"
+export INFOPATH="/usr/local/texlive/2023/texmf-dist/doc/info:$INFOPATH"
