@@ -29,7 +29,7 @@ keymap("n", "<M-l>", ":bNext<CR>", opts)
 keymap("n", "<M-h>", ":bprevious<CR>", opts)
 
 -- explorer window
-keymap("n", "<F3>", ":NvimTreeToggle<CR>", opts)
+-- keymap("n", "<F3>", ":NvimTreeToggle<CR>", opts)
 
 
 -- Resize with arrows
