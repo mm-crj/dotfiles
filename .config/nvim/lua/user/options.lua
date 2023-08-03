@@ -66,6 +66,12 @@ vim.cmd([[set formatoptions+=tcq]])
 -- vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 -- vim.o.foldlevelstart = 99
 -- vim.o.foldenable = true
+--
+-- Copilot settings
+-- vim.g.copilot_no_tab_map = true
+-- vim.g.copilot_assume_mapped = true
+-- vim.g.copilot_tab_fallback = ""
+-- vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
 -- save folds automatically
 vim.cmd([[

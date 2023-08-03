@@ -36,6 +36,7 @@ require("user.lualine")
 
 require('neoscroll').setup() -- smooth scrolling
 
+-- telescope
 require("user.telescope")
 require('telescope').load_extension('luasnip')
 require('telescope').load_extension('projects')

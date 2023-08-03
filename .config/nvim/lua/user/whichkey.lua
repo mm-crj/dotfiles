@@ -174,6 +174,7 @@ local mappings = {
   },
   s = {
     name = "Source",
+    c = { "<cmd>ReloadConfig<cr>", "Config" },
     l = { "<cmd>source ~/.config/nvim/lua/user/lsp/luasnip.lua<cr>", "LuaSnippets" },
     t = { "<cmd>lua require('telescope.builtin').buffers({sort_mru = true, ignore_current_buffer = true})<cr>","Telescope Buffers"},
   },
@@ -197,6 +198,7 @@ local mappings = {
   ["w"] = { "<cmd>w<CR>", "Write/Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["z"] = { "<cmd>wq!<CR>", "Write & Quite" },
+  ["x"] = { "<cmd>wqa<CR>", "Write & Quite All" },
 }
 
 local vopts = {

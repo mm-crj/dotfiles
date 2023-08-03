@@ -34,12 +34,12 @@ local kind_icons = {
 
 require('lsp-zero').setup_nvim_cmp({
   sources = {
-    { name = 'luasnip', option = { show_autosnippets = true } },
+    { name = 'luasnip',                option = { show_autosnippets = true } },
     { name = 'path' },
     { name = 'buffer' },
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help' },
-    { name = 'dictionary', keyword_length = 4 },
+    { name = 'dictionary',             keyword_length = 4 },
   },
 
   mapping = lsp.defaults.cmp_mappings({
@@ -62,6 +62,20 @@ require('lsp-zero').setup_nvim_cmp({
     end, { 'i', 's' }),
     -- ... Your other mappings ...
   }),
+  -- ['C-j'] = cmp.mapping(function(fallback)
+  --   if cmp.visible() then
+  --     cmp.select_next_item()
+  --   elseif luasnip.expand_or_jumpable() then
+  --     vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
+  --   elseif vim.b._copilot_suggestion ~= nil then
+  --     vim.fn.feedkeys(vim.api.nvim_replace_termcodes(vim.fn['copilot#Accept'](), true, true, true), '')
+  --   else
+  --     fallback()
+  --   end
+  -- end, {
+  --   'i',
+  --   's',
+  -- }),
 
   formatting = {
     fields = { "kind", "abbr", "menu" },
@@ -87,7 +101,7 @@ require('lsp-zero').setup_nvim_cmp({
 
 require("cmp_dictionary").setup({
   dic = {
-    ["*"] = {"/usr/share/hunspell/en_GB.dic"},
+    ["*"] = { "/usr/share/hunspell/en_GB.dic" },
   },
 })
 
