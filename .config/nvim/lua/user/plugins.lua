@@ -106,7 +106,14 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim"
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   -- Co-pilot
-  -- use "github/copilot.vim"
+  use "github/copilot.vim"
+  use {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end
+  }
   -- Docstrings and annotations
   use {
     "danymat/neogen",

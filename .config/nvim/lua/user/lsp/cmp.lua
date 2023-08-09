@@ -35,6 +35,7 @@ local kind_icons = {
 require('lsp-zero').setup_nvim_cmp({
   sources = {
     { name = 'luasnip',                option = { show_autosnippets = true } },
+    { name = 'copilot', },
     { name = 'path' },
     { name = 'buffer' },
     { name = 'nvim_lsp' },
