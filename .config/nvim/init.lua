@@ -10,7 +10,7 @@ require("user.lsp") -- lsp including cmp, snippets etc.
 require("user.vimtex")
 
 require("user.whichkey") -- keymaps
-require("user.copilot")  -- copilot
+-- require("user.copilot")  -- copilot
 
 require("user.dap") -- debugger
 

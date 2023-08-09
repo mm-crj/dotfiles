@@ -34,13 +34,15 @@ local kind_icons = {
 
 require('lsp-zero').setup_nvim_cmp({
   sources = {
-    { name = 'luasnip',                option = { show_autosnippets = true } },
-    { name = 'copilot', },
-    { name = 'path' },
-    { name = 'buffer' },
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lsp_signature_help' },
-    { name = 'dictionary',             keyword_length = 4 },
+    { name = 'luasnip',                 group_index = 2,  option = { show_autosnippets = true } },
+    -- Copilot Source
+    { name = 'copilot',                 group_index = 2 },
+    -- Other Sources
+    { name = 'path',                    group_index = 2 },
+    { name = 'buffer',                  group_index = 2 },
+    { name = 'nvim_lsp',                group_index = 2 },
+    { name = 'nvim_lsp_signature_help', group_index = 2 },
+    { name = 'dictionary',              group_index = 2,  keyword_length = 4 },
   },
 
   mapping = lsp.defaults.cmp_mappings({
@@ -84,6 +86,7 @@ require('lsp-zero').setup_nvim_cmp({
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       vim_item.menu = ({
         path = "[Path]",
+        copilot = "[Copilot]",
         nvim_lsp = "[nvim_lsp]",
         buffer = "[Buffer]",
         luasnip = "[LuaSnip]",

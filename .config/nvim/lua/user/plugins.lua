@@ -106,7 +106,14 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim"
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   -- Co-pilot
-  use "github/copilot.vim"
+use {
+  "zbirenbaum/copilot.lua",
+  cmd = "Copilot",
+  event = "InsertEnter",
+  config = function()
+    require("copilot").setup({})
+  end,
+}
   use {
     "zbirenbaum/copilot-cmp",
     after = { "copilot.lua" },
@@ -165,7 +172,7 @@ return packer.startup(function(use)
   }
 
   -- Colorschemes and highlighting
-  use "kyazdani42/nvim-web-devicons"
+ use "kyazdani42/nvim-web-devicons"
   use 'navarasu/onedark.nvim'
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
   use { 'm-demare/hlargs.nvim', requires = { 'nvim-treesitter/nvim-treesitter' } }
