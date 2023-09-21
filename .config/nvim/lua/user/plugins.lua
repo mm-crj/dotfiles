@@ -106,14 +106,14 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim"
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   -- Co-pilot
-use {
-  "zbirenbaum/copilot.lua",
-  cmd = "Copilot",
-  event = "InsertEnter",
-  config = function()
-    require("copilot").setup({})
-  end,
-}
+  use {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({})
+    end,
+  }
   use {
     "zbirenbaum/copilot-cmp",
     after = { "copilot.lua" },
@@ -172,7 +172,7 @@ use {
   }
 
   -- Colorschemes and highlighting
- use "kyazdani42/nvim-web-devicons"
+  use "kyazdani42/nvim-web-devicons"
   use 'navarasu/onedark.nvim'
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
   use { 'm-demare/hlargs.nvim', requires = { 'nvim-treesitter/nvim-treesitter' } }
@@ -196,15 +196,20 @@ use {
   use { "nvim-telescope/telescope-dap.nvim", requires = { "mfussenegger/nvim-dap" } }
   use { 'mfussenegger/nvim-dap-python', requires = { "mfussenegger/nvim-dap" } }
   use { 'jbyuki/one-small-step-for-vimkind' }
+  -- warnings
+  -- use { 'folke/trouble.nvim', requires = { 'nvim-tree/nvim-web-devicons' } }
+
+  -- Better ltex
+  use { 'vigoux/ltex-ls.nvim', requires = 'neovim/nvim-lspconfig' }
 
   -- temporary
-  use {
-    'glacambre/firenvim',
-    run = function() vim.fn['firenvim#install'](0) end
-  }
+  -- use {
+  --   'glacambre/firenvim',
+  --   run = function() vim.fn['firenvim#install'](0) end
+  -- }
 
   -- for fun
-  use 'eandrju/cellular-automaton.nvim'
+  -- use 'eandrju/cellular-automaton.nvim'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

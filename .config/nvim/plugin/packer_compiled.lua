@@ -104,11 +104,6 @@ _G.packer_plugins = {
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
-  ["cellular-automaton.nvim"] = {
-    loaded = true,
-    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/cellular-automaton.nvim",
-    url = "https://github.com/eandrju/cellular-automaton.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -179,11 +174,6 @@ _G.packer_plugins = {
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/opt/copilot.lua",
     url = "https://github.com/zbirenbaum/copilot.lua"
   },
-  firenvim = {
-    loaded = true,
-    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/firenvim",
-    url = "https://github.com/glacambre/firenvim"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -218,6 +208,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["ltex-ls.nvim"] = {
+    loaded = true,
+    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/ltex-ls.nvim",
+    url = "https://github.com/vigoux/ltex-ls.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
