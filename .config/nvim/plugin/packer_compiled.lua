@@ -104,11 +104,14 @@ _G.packer_plugins = {
     path = "/home/mainak/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+<<<<<<< HEAD
   ["cellular-automaton.nvim"] = {
     loaded = true,
     path = "/home/mainak/.local/share/nvim/site/pack/packer/start/cellular-automaton.nvim",
     url = "https://github.com/eandrju/cellular-automaton.nvim"
   },
+=======
+>>>>>>> origin/main
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/mainak/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -166,6 +169,7 @@ _G.packer_plugins = {
     },
     loaded = false,
     needs_bufread = false,
+<<<<<<< HEAD
     path = "/home/mainak/.local/share/nvim/site/pack/packer/opt/copilot-cmp",
     url = "https://github.com/zbirenbaum/copilot-cmp"
   },
@@ -184,6 +188,21 @@ _G.packer_plugins = {
     path = "/home/mainak/.local/share/nvim/site/pack/packer/start/firenvim",
     url = "https://github.com/glacambre/firenvim"
   },
+=======
+    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/opt/copilot-cmp",
+    url = "https://github.com/zbirenbaum/copilot-cmp"
+  },
+  ["copilot.lua"] = {
+    after = { "copilot-cmp" },
+    commands = { "Copilot" },
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fcopilot\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/opt/copilot.lua",
+    url = "https://github.com/zbirenbaum/copilot.lua"
+  },
+>>>>>>> origin/main
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/mainak/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -211,13 +230,22 @@ _G.packer_plugins = {
   },
   ["lazygit.nvim"] = {
     loaded = true,
+<<<<<<< HEAD
     path = "/home/mainak/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+=======
+    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+>>>>>>> origin/main
     url = "https://github.com/kdheepak/lazygit.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/mainak/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["ltex-ls.nvim"] = {
+    loaded = true,
+    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/ltex-ls.nvim",
+    url = "https://github.com/vigoux/ltex-ls.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,

@@ -60,7 +60,7 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim"  -- Useful lua functions used by lots of plugins
   use "windwp/nvim-autopairs"  -- Autopairs, integrates with both cmp and treesitter
-  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x',
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.2',
     requires = { 'nvim-lua/plenary.nvim' } }
   use { 'nvim-telescope/telescope-fzf-native.nvim',
     run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release \
@@ -201,16 +201,23 @@ return packer.startup(function(use)
   use { 'mfussenegger/nvim-dap-python', requires = { "mfussenegger/nvim-dap" } }
   use { 'jbyuki/one-small-step-for-vimkind' }
   -- warnings
+<<<<<<< HEAD
   -- use { 'folke/trouble.nvim', requires = { 'nvim-tree/nvim-web-devicons'} }
+=======
+  -- use { 'folke/trouble.nvim', requires = { 'nvim-tree/nvim-web-devicons' } }
+
+  -- Better ltex
+  use { 'vigoux/ltex-ls.nvim', requires = 'neovim/nvim-lspconfig' }
+>>>>>>> origin/main
 
   -- temporary
-  use {
-    'glacambre/firenvim',
-    run = function() vim.fn['firenvim#install'](0) end
-  }
+  -- use {
+  --   'glacambre/firenvim',
+  --   run = function() vim.fn['firenvim#install'](0) end
+  -- }
 
   -- for fun
-  use 'eandrju/cellular-automaton.nvim'
+  -- use 'eandrju/cellular-automaton.nvim'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
