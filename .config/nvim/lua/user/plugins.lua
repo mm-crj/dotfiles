@@ -75,6 +75,10 @@ return packer.startup(function(use)
     requires = { "kkharji/sqlite.lua" }
   }
   use "benfowler/telescope-luasnip.nvim"
+  use {
+    'rafi/telescope-thesaurus.nvim',
+    requires = { 'nvim-telescope/telescope.nvim' }
+  }
   use "machakann/vim-sandwich"
   use "lervag/vimtex"
   use "lukas-reineke/indent-blankline.nvim"
@@ -94,7 +98,10 @@ return packer.startup(function(use)
   -- use "kdheepak/JuliaFormatter.vim"
   -- Markdown Support
   use "ixru/nvim-markdown"
-  use "iamcco/markdown-preview.nvim"
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
   -- Buffers
   use { "akinsho/bufferline.nvim", tag = "v3.*", requires = { 'kyazdani42/nvim-web-devicons' } }
   use "moll/vim-bbye"
@@ -103,7 +110,21 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim"
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   -- Co-pilot
-  use "github/copilot.vim"
+  use {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({})
+    end,
+  }
+  use {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end
+  }
   -- Docstrings and annotations
   use {
     "danymat/neogen",
@@ -179,6 +200,8 @@ return packer.startup(function(use)
   use { "nvim-telescope/telescope-dap.nvim", requires = { "mfussenegger/nvim-dap" } }
   use { 'mfussenegger/nvim-dap-python', requires = { "mfussenegger/nvim-dap" } }
   use { 'jbyuki/one-small-step-for-vimkind' }
+  -- warnings
+  -- use { 'folke/trouble.nvim', requires = { 'nvim-tree/nvim-web-devicons'} }
 
   -- temporary
   use {

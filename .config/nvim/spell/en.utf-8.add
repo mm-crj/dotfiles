@@ -16,3 +16,8 @@ dataframe
 JLD2
 REPL
 Folker
+Wasserstein
+Lyapunov
+Segel
+Gelarkin
+Advection

@@ -16,6 +16,7 @@ vim.cmd([[
 
   let g:vimtex_quickfix_mode=0
   let g:vimtex_quickfix_open_on_warning=0
+
   " Disable custom warnings based on regexp
   let g:vimtex_quickfix_ignore_filters = [
         \ ' Marginpar on page ',

@@ -155,8 +155,8 @@ local mappings = {
     d = { "<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics", },
     f = { "<cmd>LspZeroFormat<cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
-    j = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Next Diagnostic", },
-    k = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Prev Diagnostic", },
+    j = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic", },
+    k = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next Diagnostic", },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
     q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
@@ -174,6 +174,7 @@ local mappings = {
   },
   s = {
     name = "Source",
+    c = { "<cmd>ReloadConfig<cr>", "Config" },
     l = { "<cmd>source ~/.config/nvim/lua/user/lsp/luasnip.lua<cr>", "LuaSnippets" },
     t = { "<cmd>lua require('telescope.builtin').buffers({sort_mru = true, ignore_current_buffer = true})<cr>","Telescope Buffers"},
   },
@@ -197,6 +198,7 @@ local mappings = {
   ["w"] = { "<cmd>w<CR>", "Write/Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["z"] = { "<cmd>wq!<CR>", "Write & Quite" },
+  ["x"] = { "<cmd>wqa<CR>", "Write & Quite All" },
 }
 
 local vopts = {

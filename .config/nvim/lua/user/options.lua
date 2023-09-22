@@ -3,7 +3,7 @@ vim.opt.backup = false                      -- creates a backup file
 vim.opt.clipboard =
 "unnamedplus"                               -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1                       -- more space in the neovim command line for displaying messages
-vim.opt.completeopt = { "menuone,preview" } -- mostly just for cmp
+vim.opt.completeopt = { "menu,menuone,noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 0                    -- so that `` is visible in markdown files
 vim.opt.fileencoding =
 "utf-8"                                     -- the encoding written to a file
@@ -39,8 +39,8 @@ vim.opt.linebreak = true
 vim.opt.list = true
 vim.opt.scrolloff = 999 -- is one of my fav
 vim.opt.sidescrolloff = 8
-vim.opt.guifont = "SauceCodePro Nerd Font Mono:h10"
--- "mololokai Nerd Font Mono:h15 " -- the font used in graphical neovim applications
+vim.opt.guifont = "SauceCodePro NF:h11"
+-- "mononoki Nerd Font Mono:h12 " -- the font used in graphical neovim applications
 vim.opt.wildignore =
 "*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*,*.tmp,*.toc,*.aux,*.log,*.bbl,*.blg,*.log,*.lof,*.lot,*.ilg,*.out,*.glo,*.gls,*.nlo,*.nls,*.brf,*.ist,*.glg,*.synctex.gz,*.tgz,*.idx,*.ind,*blx.bib,*.fdb_latexmk,*.run.xml,*.bcf,*.glsdefs,*.fls,*.eps,*.pdf,*.png,*.jpg" -- Show only files editable by vim
 vim.opt.shortmess:append("c")
@@ -66,6 +66,12 @@ vim.cmd([[set formatoptions+=tcq]])
 -- vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 -- vim.o.foldlevelstart = 99
 -- vim.o.foldenable = true
+--
+-- Copilot settings
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.g.copilot_tab_fallback = ""
+vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
 -- save folds automatically
 vim.cmd([[
