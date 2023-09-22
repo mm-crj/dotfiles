@@ -156,11 +156,7 @@ local mappings = {
     f = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Float Diagnostics" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     j = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic", },
-<<<<<<< HEAD
-    k = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next Diagnostic", },
-=======
     k = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic", },
->>>>>>> origin/main
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
     q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },

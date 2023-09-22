@@ -34,19 +34,11 @@ local kind_icons = {
 
 require('lsp-zero').setup_nvim_cmp({
   sources = {
-<<<<<<< HEAD
-    { name = 'luasnip',                 group_index = 2,  option = { show_autosnippets = true } },
-    -- Copilot Source
-    { name = 'copilot',                 group_index = 2 },
-    -- Other Sources
-    { name = 'path',                    group_index = 2 },
-=======
     { name = 'luasnip',                 group_index = 1,  option = { show_autosnippets = true } },
     -- Copilot Source
     { name = 'copilot',                 group_index = 2 },
     -- Other Sources
     { name = 'path',                    group_index = 1 },
->>>>>>> origin/main
     { name = 'buffer',                  group_index = 2 },
     { name = 'nvim_lsp',                group_index = 2 },
     { name = 'nvim_lsp_signature_help', group_index = 2 },

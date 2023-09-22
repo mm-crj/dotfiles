@@ -201,14 +201,11 @@ return packer.startup(function(use)
   use { 'mfussenegger/nvim-dap-python', requires = { "mfussenegger/nvim-dap" } }
   use { 'jbyuki/one-small-step-for-vimkind' }
   -- warnings
-<<<<<<< HEAD
-  -- use { 'folke/trouble.nvim', requires = { 'nvim-tree/nvim-web-devicons'} }
-=======
+
   -- use { 'folke/trouble.nvim', requires = { 'nvim-tree/nvim-web-devicons' } }
 
   -- Better ltex
   use { 'vigoux/ltex-ls.nvim', requires = 'neovim/nvim-lspconfig' }
->>>>>>> origin/main
 
   -- temporary
   -- use {
