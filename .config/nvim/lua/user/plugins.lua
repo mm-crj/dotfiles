@@ -75,6 +75,10 @@ return packer.startup(function(use)
     requires = { "kkharji/sqlite.lua" }
   }
   use "benfowler/telescope-luasnip.nvim"
+  use {
+    'rafi/telescope-thesaurus.nvim',
+    requires = { 'nvim-telescope/telescope.nvim' }
+  }
   use "machakann/vim-sandwich"
   use "lervag/vimtex"
   use "lukas-reineke/indent-blankline.nvim"
@@ -197,6 +201,7 @@ return packer.startup(function(use)
   use { 'mfussenegger/nvim-dap-python', requires = { "mfussenegger/nvim-dap" } }
   use { 'jbyuki/one-small-step-for-vimkind' }
   -- warnings
+
   -- use { 'folke/trouble.nvim', requires = { 'nvim-tree/nvim-web-devicons' } }
 
   -- Better ltex

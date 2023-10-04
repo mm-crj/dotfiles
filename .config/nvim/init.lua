@@ -6,6 +6,7 @@ require("user.keymaps")
 require("user.commands")
 
 require("user.treesitter")
+
 require("user.lsp") -- lsp including cmp, snippets etc.
 require("user.vimtex")
 
@@ -18,6 +19,7 @@ require("user.autopairs")
 require("user.comment")
 require("user.gitsigns")
 require("user.nvim-tree") -- file explorer
+
 require("user.alpha")     -- home screen
 require("user.autosave")
 require("user.remember")  -- remembers last cursor position
