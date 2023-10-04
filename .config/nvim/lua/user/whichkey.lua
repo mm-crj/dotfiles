@@ -36,7 +36,7 @@ local setup = {
   icons = {
     breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
     separator = "➜", -- symbol used between a key and it's label
-    group = "+",      -- symbol prepended to a group
+    group = "+", -- symbol prepended to a group
   },
   popup_mappings = {
     scroll_down = "<c-d>", -- binding to scroll down inside the popup
@@ -85,7 +85,8 @@ local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   b = {
     name = "Buffers",
-    b = { "<cmd>lua require('telescope.builtin').buffers({sort_mru = true, ignore_current_buffer = true})<cr>", "Find Buffers" },
+    b = { "<cmd>lua require('telescope.builtin').buffers({sort_mru = true, ignore_current_buffer = true})<cr>",
+      "Find Buffers" },
     d = { "<cmd>Bdelete!<CR>", "Close Buffer" },
     f = { "<cmd>lua vim.lsp.buf.format { async = true }<cr>", "Format" },
     h = { "<cmd>Alpha<cr>", "Alpha Home" },
@@ -174,16 +175,20 @@ local mappings = {
     m = { "<cmd>Mason<cr>", "Mason" },
   },
   s = {
-    name = "Source",
+    name = "Source/Session",
+    a = { "<cmd>ASToggle<cr>", "Auto Save" },
     c = { "<cmd>ReloadConfig<cr>", "Config" },
+    d = { "<cmd>SessionDelete<cr>", "Delete" },
     l = { "<cmd>source ~/.config/nvim/lua/user/lsp/luasnip.lua<cr>", "LuaSnippets" },
-    t = { "<cmd>lua require('telescope.builtin').buffers({sort_mru = true, ignore_current_buffer = true})<cr>","Telescope Buffers"},
+    s = { "<cmd>SessionSave<cr>", "Save" },
+    r = { "<cmd>SessionRestore<cr>", "Restore" },
+    t = { "<cmd>lua require('telescope.builtin').buffers({sort_mru = true, ignore_current_buffer = true})<cr>",
+      "Telescope Buffers" },
   },
 
 
   t = {
     name = "Toggle",
-    a = { "<cmd>ASToggle<cr>", "Auto Save" },
     s = { "<cmd>set spell!<cr>", "Spell Check" },
     m = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview" },
   },

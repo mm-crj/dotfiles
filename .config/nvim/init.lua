@@ -24,7 +24,7 @@ require("user.remember")  -- remembers last cursor position
 -- require("user.ufo")       -- folds
 require("user.auto-session")
 require("project_nvim").setup()
-
+require("user.ltex-ls")
 --[[ require('leap').add_default_mappings() ]]
 --[[ require('flit').setup() ]]
 --[[ require("julia-vim") ]]
