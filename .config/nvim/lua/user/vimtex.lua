@@ -44,7 +44,6 @@ vim.cmd([[
       \ 'executable' : 'latexmk',
       \ 'hooks' : [],
       \ 'options' : [
-      \   '-shell-escape',
       \   '-verbose',
       \   '-file-line-error',
       \   '-synctex=1',
