@@ -57,7 +57,7 @@ vim.wo.colorcolumn = "99999"
 -- vim.opt.listchars:append "space:"
 -- vim.opt.listchars:append "eol:↴"
 
-indent_blankline.setup({
+require("ibl").setup({
 	-- show_end_of_line = true,
 	-- space_char_blankline = " ",
 	-- show_current_context = true,

@@ -9,7 +9,7 @@ end
 -- if not config_status_ok then
 --   return
 -- end
---
+
 -- local tree_cb = nvim_tree_config.nvim_tree_callback
 
 
@@ -25,6 +25,7 @@ nvim_tree.setup({
   sort_by = "case_sensitive",
   renderer = {
     group_empty = true,
+    root_folder_label = false,
   },
   filters = {
     dotfiles = true,
@@ -48,7 +49,6 @@ nvim_tree.setup({
   },
   view = {
     width = 25,
-    hide_root_folder = false,
     side = "left",
     -- mappings = {
     --   custom_only = false,

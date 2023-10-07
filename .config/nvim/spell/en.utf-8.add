@@ -16,13 +16,10 @@ dataframe
 JLD2
 REPL
 Folker
-<<<<<<< HEAD
 Wasserstein
 Lyapunov
 Segel
 Gelarkin
 Advection
-=======
 Planck
 PDEs
->>>>>>> origin/main
