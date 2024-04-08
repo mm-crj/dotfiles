@@ -215,7 +215,7 @@ return {
 
   s({ trig = "abs", wordTrig = true, snippetType = 'autosnippet', dscr = 'abs' },
     fmta(
-      [[\abs{<>}^{<>} <>]],
+      [[\abs*{<>}^{<>} <>]],
       {
         i(1),
         i(2),
@@ -439,9 +439,9 @@ return {
   s({ trig = "ff", wordTrig = true, snippetType = 'autosnippet', dscr = 'begin end environment' },
     fmta(
       [[
-      \begin{equation}
+      \begin{equation*}
            <>
-      \end{equation}
+      \end{equation*}
        <>
      ]],
       { i(1), i(0)
@@ -456,7 +456,7 @@ return {
        \end{lemma}
        <>
      ]],
-      { i(1), rep(1),i(2), i(0)
+      { i(1), i(2),i(3), i(0)
       }
     )
   ),
@@ -466,10 +466,45 @@ return {
        \begin{proposition}[<>]\label{prop:<>}
            <>
        \end{proposition}
-}
        <>
      ]],
-      { i(1), rep(1),i(2), i(0)
+      { i(1), i(2),i(3), i(0)
+      }
+    )
+  ),
+  s({ trig = "bthm", wordTrig = true, snippetType = 'autosnippet', dscr = 'begin end theorem' },
+    fmta(
+      [[
+       \begin{theorem}[<>]\label{thm:<>}
+           <>
+       \end{theorem}
+       <>
+     ]],
+      { i(1), i(2),i(3), i(0)
+      }
+    )
+  ),
+  s({ trig = "bdef", wordTrig = true, snippetType = 'autosnippet', dscr = 'begin end definition' },
+    fmta(
+      [[
+       \begin{definition}[<>]\label{def:<>}
+           <>
+       \end{definition}
+       <>
+     ]],
+      { i(1), i(2),i(3), i(0)
+      }
+    )
+  ),
+  s({ trig = "bex", wordTrig = true, snippetType = 'autosnippet', dscr = 'begin end example' },
+    fmta(
+      [[
+       \begin{example}[<>]\label{ex:<>}
+           <>
+       \end{example}
+       <>
+     ]],
+      { i(1), i(2),i(3), i(0)
       }
     )
   ),

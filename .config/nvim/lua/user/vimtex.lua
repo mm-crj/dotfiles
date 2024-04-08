@@ -38,6 +38,7 @@ vim.cmd([[
 
 
   let g:vimtex_compiler_latexmk = {
+      \ 'aux_dir' : 'build',
       \ 'out_dir' : 'build',
       \ 'callback' : 1,
       \ 'continuous' : 0,

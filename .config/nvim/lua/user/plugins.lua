@@ -56,10 +56,14 @@ vim.cmd([[
 -- Install your plugins here
 return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  use 'lewis6991/impatient.nvim'
+  use "lewis6991/impatient.nvim"
   use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim"  -- Useful lua functions used by lots of plugins
-  use "windwp/nvim-autopairs"  -- Autopairs, integrates with both cmp and treesitter
+  use { "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+      require("nvim-autopairs").setup {}
+    end } -- Autopairs, integrates with both cmp and treesitter
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.2',
     requires = { 'nvim-lua/plenary.nvim' } }
   use { 'nvim-telescope/telescope-fzf-native.nvim',
@@ -75,6 +79,14 @@ return packer.startup(function(use)
     requires = { "kkharji/sqlite.lua" }
   }
   use "benfowler/telescope-luasnip.nvim"
+  use {
+    "jemag/telescope-diff.nvim",
+    requires = { "nvim-telescope/telescope.nvim" },
+  }
+  use {
+    'rafi/telescope-thesaurus.nvim',
+    requires = { 'nvim-telescope/telescope.nvim' }
+  }
   use "machakann/vim-sandwich"
   use "lervag/vimtex"
   use "lukas-reineke/indent-blankline.nvim"
@@ -133,40 +145,40 @@ return packer.startup(function(use)
   }
 
   -- File explorer
-  use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons', }, }
+  use { "kyazdani42/nvim-tree.lua", requires = { "kyazdani42/nvim-web-devicons", }, }
 
   -- Syntax highlighting and textobjects
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'nvim-treesitter/nvim-treesitter-textobjects'
-  use 'nvim-treesitter/playground'
+  use { "nvim-treesitter/nvim-treesitter", run = ':TSUpdate' }
+  use "nvim-treesitter/nvim-treesitter-textobjects"
+  use "nvim-treesitter/playground"
 
-  use { 'wellle/targets.vim' } -- extends textobjects
+  use { "wellle/targets.vim" } -- extends textobjects
   use "p00f/nvim-ts-rainbow"
 
   use {
-    'VonHeikemen/lsp-zero.nvim',
+    "VonHeikemen/lsp-zero.nvim",
     requires = {
       -- LSP Support
-      { 'neovim/nvim-lspconfig' },
-      { 'williamboman/mason.nvim' },
-      { 'williamboman/mason-lspconfig.nvim' },
-      { 'jose-elias-alvarez/null-ls.nvim' },
+      { "neovim/nvim-lspconfig" },
+      { "williamboman/mason.nvim" },
+      { "williamboman/mason-lspconfig.nvim" },
+      { "jose-elias-alvarez/null-ls.nvim" },
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },
-      { 'hrsh7th/cmp-buffer' },
-      { 'hrsh7th/cmp-path' },
-      { 'saadparwaiz1/cmp_luasnip' },
-      { 'hrsh7th/cmp-nvim-lsp' },
-      { 'hrsh7th/cmp-nvim-lua' },
-      { 'hrsh7th/cmp-cmdline' },
-      { 'uga-rosa/cmp-dictionary' },
-      { 'hrsh7th/cmp-nvim-lsp-signature-help' },
-      { 'quangnguyen30192/cmp-nvim-tags' },
-      { 'rcarriga/cmp-dap' }, -- debugger completion
+      { "hrsh7th/nvim-cmp" },
+      { "hrsh7th/cmp-buffer" },
+      { "hrsh7th/cmp-path" },
+      { "saadparwaiz1/cmp_luasnip" },
+      { "hrsh7th/cmp-nvim-lsp" },
+      { "hrsh7th/cmp-nvim-lua" },
+      { "hrsh7th/cmp-cmdline" },
+      { "uga-rosa/cmp-dictionary" },
+      { "hrsh7th/cmp-nvim-lsp-signature-help" },
+      { "quangnguyen30192/cmp-nvim-tags" },
+      { "rcarriga/cmp-dap" }, -- debugger completion
 
       -- Snippets
-      { 'L3MON4D3/LuaSnip' },
+      { "L3MON4D3/LuaSnip" },
 
     }
   }
@@ -188,7 +200,12 @@ return packer.startup(function(use)
       "nvim-lua/plenary.nvim",
     },
   })
-
+  -- for Diffview
+  use "sindrets/diffview.nvim"
+  -- For asyn IO
+  use { "nvim-neotest/nvim-nio" }
+  -- For DuckDuckGo integration
+  use { "pbnj/vim-ddgr" }
   -- Debugging
   use { "mfussenegger/nvim-dap" }
   use { 'theHamsta/nvim-dap-virtual-text', requires = { "mfussenegger/nvim-dap" } }
@@ -200,7 +217,7 @@ return packer.startup(function(use)
   -- use { 'folke/trouble.nvim', requires = { 'nvim-tree/nvim-web-devicons' } }
 
   -- Better ltex
-  use { 'vigoux/ltex-ls.nvim', requires = 'neovim/nvim-lspconfig' }
+  -- use { 'vigoux/ltex-ls.nvim', requires = 'neovim/nvim-lspconfig' }
 
   -- temporary
   -- use {

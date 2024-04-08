@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/mmcrjx/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/mmcrjx/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/mmcrjx/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/mmcrjx/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/mmcrjx/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/mmcrjx/.cache/nvim/packer_hererocks/2.1.1692716794/share/lua/5.1/?.lua;/home/mmcrjx/.cache/nvim/packer_hererocks/2.1.1692716794/share/lua/5.1/?/init.lua;/home/mmcrjx/.cache/nvim/packer_hererocks/2.1.1692716794/lib/luarocks/rocks-5.1/?.lua;/home/mmcrjx/.cache/nvim/packer_hererocks/2.1.1692716794/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/mmcrjx/.cache/nvim/packer_hererocks/2.1.1692716794/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -174,6 +174,11 @@ _G.packer_plugins = {
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/opt/copilot.lua",
     url = "https://github.com/zbirenbaum/copilot.lua"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -208,11 +213,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
-  },
-  ["ltex-ls.nvim"] = {
-    loaded = true,
-    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/ltex-ls.nvim",
-    url = "https://github.com/vigoux/ltex-ls.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -251,8 +251,11 @@ _G.packer_plugins = {
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
-    loaded = true,
-    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/opt/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
@@ -294,6 +297,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/nvim-markdown",
     url = "https://github.com/ixru/nvim-markdown"
+  },
+  ["nvim-nio"] = {
+    loaded = true,
+    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/nvim-nio",
+    url = "https://github.com/nvim-neotest/nvim-nio"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -380,6 +388,11 @@ _G.packer_plugins = {
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
     url = "https://github.com/nvim-telescope/telescope-dap.nvim"
   },
+  ["telescope-diff.nvim"] = {
+    loaded = true,
+    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/telescope-diff.nvim",
+    url = "https://github.com/jemag/telescope-diff.nvim"
+  },
   ["telescope-frecency.nvim"] = {
     config = { "\27LJ\2\nM\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\rfrecency\19load_extension\14telescope\frequire\0" },
     loaded = true,
@@ -396,6 +409,11 @@ _G.packer_plugins = {
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/telescope-luasnip.nvim",
     url = "https://github.com/benfowler/telescope-luasnip.nvim"
   },
+  ["telescope-thesaurus.nvim"] = {
+    loaded = true,
+    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/telescope-thesaurus.nvim",
+    url = "https://github.com/rafi/telescope-thesaurus.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -405,6 +423,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
+  },
+  ["vim-ddgr"] = {
+    loaded = true,
+    path = "/home/mmcrjx/.local/share/nvim/site/pack/packer/start/vim-ddgr",
+    url = "https://github.com/pbnj/vim-ddgr"
   },
   ["vim-repeat"] = {
     loaded = true,
@@ -429,14 +452,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: neogen
-time([[Config for neogen]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vneogen\frequire\0", "config", "neogen")
-time([[Config for neogen]], false)
 -- Config for: telescope-frecency.nvim
 time([[Config for telescope-frecency.nvim]], true)
 try_loadstring("\27LJ\2\nM\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\rfrecency\19load_extension\14telescope\frequire\0", "config", "telescope-frecency.nvim")
 time([[Config for telescope-frecency.nvim]], false)
+-- Config for: neogen
+time([[Config for neogen]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vneogen\frequire\0", "config", "neogen")
+time([[Config for neogen]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
@@ -453,7 +476,7 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'copilot.lua'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'copilot.lua', 'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 

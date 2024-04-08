@@ -199,7 +199,7 @@ local mappings = {
     e = { '<cmd>VimtexErrors<cr>', 'Errors' },
     s = { '<cmd>VimtexStop<cr>', 'Stop' },
     t = { '<cmd>VimtexTocToggle<cr>', 'Table of Contents' },
-    v = { '<cmd>VimtexCompileSS<cr>', 'Compile' },
+    v = { '<cmd>VimtexCompile<cr>', 'Compile' },
   },
   ["w"] = { "<cmd>w<CR>", "Write/Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },

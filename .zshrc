@@ -106,6 +106,8 @@ source $ZSH/oh-my-zsh.sh
 alias df="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 # alias nvim_app="nvim_app -u /home/mmcrjx/.config/nvim_app/init.lua"
 alias python='python3'
+alias top='btop'
+alias cat='batcat'
 alias zathura='tabbed -c zathura -e'
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/var/lib/flathub/
@@ -136,7 +138,12 @@ ZSH_AUTOSUGGEST_STRATEGY=( history completion )
 znap source zdharma-continuum/fast-syntax-highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets )
 
-
+# viewing man pages in nvim
+# if [[ "$(command -v nvim)" ]]; then
+#     export EDITOR='nvim'
+#     export MANPAGER='nvim +Man!'
+#     export MANWIDTH=999
+# fi
 # Completion suggestions from man pages (using Tab)
 zstyle ':completion:*:manuals'    separate-sections true
 zstyle ':completion:*:manuals.*'  insert-sections   true
