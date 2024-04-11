@@ -13,12 +13,22 @@ df push
 ```
 
 ### Directory structure
+`
+~/ 
+ |-- .zshrc
+ |-- .zshenv
+ |-- README.md
+.config/
+  |--- kitty/
+  |--- nvim/
+  |--- rofi/
+  |--- zathura/zathurarc
+  |___ rofi/
+`
 
-`.config/kitty
-.config/nvim
-.config/rofi
-.config/zathura/zathurarc
-.julia/config/startup.jl
-.zshenv
-.zshrc
-README.md`
+### To Do
+  - [ ] Find a way to list all files in telescope, instead of just the ones opened.
+  - [ ] The file names should be form the last directory if it is just a level up. I don't need the full path while trying to change buffers.
+  - [ ] Make the git structure actully useful or delete it. Lazy git and telescope diff. 
+  - [ ] Integrate flit and leap into workflow.
+
