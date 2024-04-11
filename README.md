@@ -13,8 +13,7 @@ df push
 ```
 
 ### Directory structure
-`
-~/ 
+```~/
  |-- .zshrc
  |-- .zshenv
  |-- README.md
@@ -24,7 +23,7 @@ df push
   |--- rofi/
   |--- zathura/zathurarc
   |___ rofi/
-`
+```
 
 ### To Do
   - [ ] Find a way to list all files in telescope, instead of just the ones opened.
