@@ -39,7 +39,8 @@ vim.opt.linebreak = true
 vim.opt.list = true
 vim.opt.scrolloff = 999 -- is one of my fav
 vim.opt.sidescrolloff = 8
-vim.opt.guifont = "SauceCodePro NF:h11"
+--this doesn't work on kitty term, change the kitty conf instead
+vim.opt.guifont = "SauceCodePro NF:h15"
 -- "mononoki Nerd Font Mono:h12 " -- the font used in graphical neovim applications
 vim.opt.wildignore =
 "*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*,*.tmp,*.toc,*.aux,*.log,*.bbl,*.blg,*.log,*.lof,*.lot,*.ilg,*.out,*.glo,*.gls,*.nlo,*.nls,*.brf,*.ist,*.glg,*.synctex.gz,*.tgz,*.idx,*.ind,*blx.bib,*.fdb_latexmk,*.run.xml,*.bcf,*.glsdefs,*.fls,*.eps,*.pdf,*.png,*.jpg" -- Show only files editable by vim

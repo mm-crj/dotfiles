@@ -104,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias df="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-# alias nvim_app="nvim_app -u /home/mmcrjx/.config/nvim_app/init.lua"
+alias mvim="NVIM_APPNAME=mvim nvim"
 alias python='python3'
 alias top='btop'
 alias cat='batcat'
