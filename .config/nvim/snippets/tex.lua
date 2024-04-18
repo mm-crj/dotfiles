@@ -439,9 +439,9 @@ return {
   s({ trig = "ff", wordTrig = true, snippetType = 'autosnippet', dscr = 'begin end environment' },
     fmta(
       [[
-      \begin{equation}
+      \begin{equation*}
            <>
-      \end{equation}
+      \end{equation*}
        <>
      ]],
       { i(1), i(0)

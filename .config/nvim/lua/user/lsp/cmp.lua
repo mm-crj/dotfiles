@@ -47,7 +47,7 @@ require('lsp-zero').setup_nvim_cmp({
 
   mapping = lsp.defaults.cmp_mappings({
     -- go to next placeholder in the snippet
-    ['<M-j>'] = cmp.mapping(function(fallback)
+    ['<C-j>'] = cmp.mapping(function(fallback)
       if luasnip.jumpable(1) then
         luasnip.jump(1)
       else
@@ -56,7 +56,7 @@ require('lsp-zero').setup_nvim_cmp({
     end, { 'i', 's' }),
 
     -- go to previous placeholder in the snippet
-    ['<M-k>'] = cmp.mapping(function(fallback)
+    ['<C-k>'] = cmp.mapping(function(fallback)
       if luasnip.jumpable(-1) then
         luasnip.jump(-1)
       else

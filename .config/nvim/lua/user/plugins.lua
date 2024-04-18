@@ -174,6 +174,8 @@ return packer.startup(function(use)
 
     }
   }
+  -- Vimdiff
+  use "sindrets/diffview.nvim"
 
   -- Colorschemes and highlighting
   use "kyazdani42/nvim-web-devicons"
@@ -192,7 +194,7 @@ return packer.startup(function(use)
       "nvim-lua/plenary.nvim",
     },
   })
-
+  use { "nvim-neotest/nvim-nio" }
   -- Debugging
   use { "mfussenegger/nvim-dap" }
   use { 'theHamsta/nvim-dap-virtual-text', requires = { "mfussenegger/nvim-dap" } }

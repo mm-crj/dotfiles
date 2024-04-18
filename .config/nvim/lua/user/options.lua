@@ -1,4 +1,3 @@
--- :help options
 vim.opt.backup = false                      -- creates a backup file
 vim.opt.clipboard =
 "unnamedplus"                               -- allows neovim to access the system clipboard
@@ -14,7 +13,7 @@ vim.opt.mouse =
 vim.opt.pumheight = 10                      -- pop up menu height
 vim.opt.showmode = false                    -- we don't need to see things like -- INSERT -- anymore
 vim.opt.showtabline = 2                     -- always show tabs
-vim.opt.smartcase = true                    -- smart case
+vim.o.smartcase = true                    -- smart case
 vim.opt.smartindent = true                  -- make indenting smarter again
 vim.opt.splitbelow = true                   -- force all horizontal splits to go below current window
 vim.opt.splitright = true                   -- force all vertical splits to go to the right of current window
@@ -51,7 +50,8 @@ vim.g.mapleader = "<Space>"
 vim.opt.spelllang = "en_gb"
 vim.o.spelloptions = "camel"
 vim.g.tex_comment_nospell = 1
-
+-- autopair setings
+vim.api.nvim_set_keymap('i', '<M-j>', '<Right>', { noremap = true, silent = true })
 -- nvim-tree specific setting
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -60,6 +60,8 @@ vim.g.loaded_netrwPlugin = 1
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions+=tcq]])
+
+vim.o.magic = true
 
 -- ufo folding
 -- vim.o.foldcolumn = '1' -- '0' is not bad
@@ -71,7 +73,7 @@ vim.cmd([[set formatoptions+=tcq]])
 vim.g.copilot_no_tab_map = true
 vim.g.copilot_assume_mapped = true
 vim.g.copilot_tab_fallback = ""
-vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+-- vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
 -- save folds automatically
 vim.cmd([[

@@ -3,7 +3,7 @@
 # confirmations, etc.) must go above this block; everything else may go below.
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -106,11 +106,18 @@ source $ZSH/oh-my-zsh.sh
 alias df="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 # alias nvim_app="nvim_app -u /home/mmcrjx/.config/nvim_app/init.lua"
 alias python='python3'
+alias top='btop'
 alias zathura='tabbed -c zathura -e'
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/var/lib/flathub/
 export PATH=$PATH:~/.local/bin
 
+# Nvim as manpager
+if [[ "$(command -v nvim)" ]]; then
+    export VISUAL='nvim'
+    export PAGER='nvim +Man!'
+    export MANWIDTH=999
+fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # Download Znap (Plugin Manager), if it's not there yet.
@@ -164,14 +171,14 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/mmcrjx/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/mainak/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/mmcrjx/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/mmcrjx/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/mainak/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/mainak/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/mmcrjx/anaconda3/bin:$PATH"
+        export PATH="/home/mainak/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
