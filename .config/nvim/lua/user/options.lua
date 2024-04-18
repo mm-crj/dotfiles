@@ -50,8 +50,6 @@ vim.g.mapleader = "<Space>"
 vim.opt.spelllang = "en_gb"
 vim.o.spelloptions = "camel"
 vim.g.tex_comment_nospell = 1
--- autopair setings
-vim.api.nvim_set_keymap('i', '<M-j>', '<Right>', { noremap = true, silent = true })
 -- nvim-tree specific setting
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -74,7 +72,10 @@ vim.g.copilot_no_tab_map = true
 vim.g.copilot_assume_mapped = true
 vim.g.copilot_tab_fallback = ""
 -- vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-
+-- treesitter settings
+ vim.g.skip_ts_context_commentstring_module = true
+-- Motion settings
+vim.api.nvim_set_keymap('i', '<M-j>', '<Right>', { noremap = true, silent = true })
 -- save folds automatically
 vim.cmd([[
 if exists("g:loaded_restore_view")
