@@ -105,12 +105,15 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias df="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 # alias nvim_app="nvim_app -u /home/mmcrjx/.config/nvim_app/init.lua"
+alias mvim="NVIM_APPNAME=mvim nvim"
+alias lvim="NVIM_APPNAME=lvim nvim"
 alias python='python3'
 alias top='btop'
 alias zathura='tabbed -c zathura -e'
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/var/lib/flathub/
 export PATH=$PATH:~/.local/bin
+export PATH=$PATH:$HOME/.config/nvm/versions/node/v18.7.0/bin/
 
 # Nvim as manpager
 if [[ "$(command -v nvim)" ]]; then

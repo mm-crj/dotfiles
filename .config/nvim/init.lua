@@ -5,7 +5,7 @@ require("user.options")
 require("user.keymaps")
 require("user.commands")
 
--- require("user.treesitter")
+require("user.treesitter")
 require('ts_context_commentstring').setup {}
 require("user.lsp") -- lsp including cmp, snippets etc.
 require("user.vimtex")
