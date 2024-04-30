@@ -77,6 +77,9 @@ vim.g.copilot_tab_fallback = ""
  vim.g.skip_ts_context_commentstring_module = true
 -- Motion settings
 vim.api.nvim_set_keymap('i', '<M-j>', '<Right>', { noremap = true, silent = true })
+-- perl provider
+vim.g.perl_host_prog = '/usr/bin/perl'
+
 -- save folds automatically
 vim.cmd([[
 if exists("g:loaded_restore_view")
