@@ -56,66 +56,66 @@ keymap('n', '//', ':noh<CR>', opts)
 
 -- Move to beginning and end of line from home row
 -- in both normal and visual mode
-keymap('n', 'H', '^', opts)
-keymap('n', 'L', '$', opts)
-keymap('v', 'H', '^', opts)
-keymap('v', 'L', '$', opts)
-
--- For escaping
--- keymap("i", "kk", "<ESC>", opts)
--- keymap("i", "jj", "<ESC>", opts)
--- keymap("i", "hh", "<ESC>", opts)
-
--- For navigation (treat line breaks as new lines)
-keymap("v", "j", "gj", opts)
-keymap("v", "k", "gk", opts)
-keymap("n", "j", "gj", opts)
-keymap("n", "k", "gk", opts)
-
-
--- For Changing
-keymap("n", "cw", "ciw", opts)
-keymap("n", "c(", "ci(", opts)
-keymap("n", "c{", "ci{", opts)
-keymap("n", "c[", "ci[", opts)
-keymap("n", "c'", "ci'", opts)
-keymap("n", 'c"', 'ci"', opts)
-
-
--- For Yanking
-keymap("n", "yw", "yiw", opts)
-keymap("n", "y(", "yi(", opts)
-keymap("n", "y{", "yi{", opts)
-keymap("n", "y[", "yi[", opts)
-keymap("n", "y'", "yi'", opts)
-keymap("n", 'y"', 'yi"', opts)
-
-
--- For Deleting
-keymap("n", "dw", "daw", opts)
-keymap("n", "d(", "da(", opts)
-keymap("n", "d{", "da{", opts)
-keymap("n", "d[", "da[", opts)
-keymap("n", "d'", "da'", opts)
-keymap("n", 'd"', 'da"', opts)
-
-
--- For Selecting
-keymap("n", "vw", "viw", opts)
-keymap("n", "v(", "vi(", opts)
-keymap("n", "v{", "vi{", opts)
-keymap("n", "v[", "vi[", opts)
-keymap("n", "v'", "vi'", opts)
-keymap("n", 'v"', 'vi"', opts)
-
--- For pasting
--- Original `p` command still works but with a time-delay
-keymap("n", "pw", "\"_dawP", opts)
-keymap("n", "p{", "\"_di{P", opts)
-keymap("n", "p}", "\"_di}P", opts)
-keymap("n", "p(", "\"_di(P", opts)
-keymap("n", "p)", "\"_di)P", opts)
-keymap("n", "p]", "\"_di]P", opts)
-keymap("n", "p[", "\"_di[P", opts)
-keymap("n", "p'", "\"_di'P", opts)
-keymap("n", 'p"', '\"_di\"P', opts)
+-- keymap('n', 'H', '^', opts)
+-- keymap('n', 'L', '$', opts)
+-- keymap('v', 'H', '^', opts)
+-- keymap('v', 'L', '$', opts)
+--
+-- -- For escaping
+-- -- keymap("i", "kk", "<ESC>", opts)
+-- -- keymap("i", "jj", "<ESC>", opts)
+-- -- keymap("i", "hh", "<ESC>", opts)
+--
+-- -- For navigation (treat line breaks as new lines)
+-- keymap("v", "j", "gj", opts)
+-- keymap("v", "k", "gk", opts)
+-- keymap("n", "j", "gj", opts)
+-- keymap("n", "k", "gk", opts)
+--
+--
+-- -- For Changing
+-- keymap("n", "cw", "ciw", opts)
+-- keymap("n", "c(", "ci(", opts)
+-- keymap("n", "c{", "ci{", opts)
+-- keymap("n", "c[", "ci[", opts)
+-- keymap("n", "c'", "ci'", opts)
+-- keymap("n", 'c"', 'ci"', opts)
+--
+--
+-- -- For Yanking
+-- keymap("n", "yw", "yiw", opts)
+-- keymap("n", "y(", "yi(", opts)
+-- keymap("n", "y{", "yi{", opts)
+-- keymap("n", "y[", "yi[", opts)
+-- keymap("n", "y'", "yi'", opts)
+-- keymap("n", 'y"', 'yi"', opts)
+--
+--
+-- -- For Deleting
+-- keymap("n", "dw", "daw", opts)
+-- keymap("n", "d(", "da(", opts)
+-- keymap("n", "d{", "da{", opts)
+-- keymap("n", "d[", "da[", opts)
+-- keymap("n", "d'", "da'", opts)
+-- keymap("n", 'd"', 'da"', opts)
+--
+--
+-- -- For Selecting
+-- keymap("n", "vw", "viw", opts)
+-- keymap("n", "v(", "vi(", opts)
+-- keymap("n", "v{", "vi{", opts)
+-- keymap("n", "v[", "vi[", opts)
+-- keymap("n", "v'", "vi'", opts)
+-- keymap("n", 'v"', 'vi"', opts)
+--
+-- -- For pasting
+-- -- Original `p` command still works but with a time-delay
+-- keymap("n", "pw", "\"_dawP", opts)
+-- keymap("n", "p{", "\"_di{P", opts)
+-- keymap("n", "p}", "\"_di}P", opts)
+-- keymap("n", "p(", "\"_di(P", opts)
+-- keymap("n", "p)", "\"_di)P", opts)
+-- keymap("n", "p]", "\"_di]P", opts)
+-- keymap("n", "p[", "\"_di[P", opts)
+-- keymap("n", "p'", "\"_di'P", opts)
+-- keymap("n", 'p"', '\"_di\"P', opts)
