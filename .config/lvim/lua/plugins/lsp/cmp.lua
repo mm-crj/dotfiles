@@ -82,6 +82,7 @@ function M.setup()
       { name = "buffer" },
       { name = "path" },
       { name = "nvim_lua" },
+      { name = "orgmode" },
       { name = "dictionary",             keyword_length = 4 },
     },
     -- enabled = function()

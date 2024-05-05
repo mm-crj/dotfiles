@@ -25,10 +25,11 @@ return {
         "vim",
         "vimdoc",
         "yaml",
-        "julia"
+        "julia",
+        "org",
         -- "dap_repl",
       },
-      ignore_install = { "" }, -- List of parsers to ignore installing
+      ignore_install = { '' }, -- List of parsers to ignore installing
       autopairs = { enable = true },
       highlight = {
         enable = true,             -- false will disable the whole extension
