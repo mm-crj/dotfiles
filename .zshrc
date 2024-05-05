@@ -132,13 +132,13 @@ fi
 source ~/.zsh-plugins/zsh-snap/znap.zsh  # Start Znap
 
 # `znap prompt` makes your prompt visible in just 15-40ms!
-znap prompt sindresorhus/pure  #vi-mode is default with this 
+znap prompt sindresorhus/pure  #vi-mode is default with this
 
 # `znap source` automatically downloads and starts your plugins.
 znap source ohmyzsh/ohmyzsh lib/{git,theme-and-appearance}
 znap source ohmyzsh/ohmyzsh plugins/{git,ssh-agent,colored-man-pages,fzf,z}
 znap source marlonrichert/zsh-autocomplete
-znap install esc/conda-zsh-completion 
+znap install esc/conda-zsh-completion
 
 znap source zsh-users/zsh-autosuggestions
 ZSH_AUTOSUGGEST_STRATEGY=( history completion )
@@ -189,3 +189,9 @@ unset __conda_setup
 export PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
 export MANPATH="/usr/local/texlive/2023/texmf-dist/doc/man:$MANPATH"
 export INFOPATH="/usr/local/texlive/2023/texmf-dist/doc/info:$INFOPATH"
+
+PATH="$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
