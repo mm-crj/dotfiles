@@ -1,11 +1,26 @@
 require("nvim-treesitter.configs").setup {
-  ensure_installed = "all",
+  ensure_installed = {
+    "bash",
+    "json",
+    "html",
+    "lua",
+    "markdown",
+    "markdown_inline",
+    "python",
+    "query",
+    "regex",
+    "latex",
+    "vim",
+    "vimdoc",
+    "yaml",
+    -- "dap_repl",
+  },
   sync_install = false,
   ignore_install = { "" }, -- List of parsers to ignore installing
   autopairs = { enable = true },
   highlight = {
-    enable = true, -- false will disable the whole extension
-    disable = { "latex", "help" }, -- list of language that will be disabled
+    enable = true,        -- false will disable the whole extension
+    disable = { "help" }, -- list of language that will be disabled
     additional_vim_regex_highlighting = true,
 
   },
@@ -47,7 +62,7 @@ require("nvim-treesitter.configs").setup {
       -- mapping query_strings to modes.
       selection_modes = {
         ['@parameter.outer'] = 'v', -- charwise
-        ['@function.outer'] = 'V', -- linewise
+        ['@function.outer'] = 'V',  -- linewise
         ['@class.outer'] = '<c-v>', -- blockwise
       },
       -- If you set this to `true` (default is `false`) then any textobject is
