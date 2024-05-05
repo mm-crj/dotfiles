@@ -5,29 +5,23 @@ return {
     dependencies = { "DaikyXendo/nvim-material-icon" },
     config = function()
       require("nvim-web-devicons").setup {
-        override = require("nvim-material-icon").get_icons(),
+        -- override = require("nvim-material-icon").get_icons(),
       }
     end,
   },
   { "tpope/vim-repeat",   event = "VeryLazy" },
   {
     "lukas-reineke/indent-blankline.nvim",
-    event = { "BufReadPost", "BufNewFile" },
-    opts = {
-      char = "│",
-      filetype_exclude = { "help", "alpha", "dashboard", "NvimTree", "Trouble", "lazy" },
-      buftype_exclude = { "terminal", "nofile" },
-      show_trailing_blankline_indent = false,
-      show_first_indent_level = true,
-      use_treesitter = true,
-      show_current_context = false,
-    },
+    lazy = false,
+    config = function()
+      require("ibl").setup()
+    end,
   },
   {
     'norcalli/nvim-colorizer.lua',
     event = "VeryLazy",
     config = function()
-      require 'colorizer'.setup()
+      require 'colorizer'.setup {}
     end
   },
   {
@@ -67,4 +61,30 @@ return {
       })
     end,
   },
+  -- install without yarn or npm
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
+  -- LazyGit
+  {
+    "kdheepak/lazygit.nvim",
+    lazy = false,
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    -- setting the keybinding for LazyGit with 'keys' is recommended in
+    -- order to load the plugin when the command is run for the first time
+  },
+
 }
