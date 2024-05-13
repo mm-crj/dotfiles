@@ -62,7 +62,7 @@ return {
         ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
         b = {
           name = "Buffers",
-          b = { "<cmd>Telescope buffers<cr>", "Find Buffers" },
+          b = { "<cmd>lua require('telescope.builtin').buffers({sort_lastused = true, ignore_current_buffer = true})<cr>", "Find Buffers" },
           d = { "<cmd>bd<CR>", "Close Buffer" },
           f = { "<cmd>lua vim.lsp.buf.format { async = true }<cr>", "Format" },
           h = { "<cmd>Alpha<cr>", "Alpha Home" },

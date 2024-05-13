@@ -42,46 +42,39 @@ function M.setup()
       }
     }
   })
-  lspconfig.julials.setup({
+
+  lspconfig.tsserver.setup({
     settings = {
-      julia = {
+      javascript = {
         format = {
-          indent = 2,
-        },
+          enable = false
+        }
       },
-    },
+      typescript = {
+        format = {
+          enable = false
+        }
+      }
+    }
   })
-
-
+  local path = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
   local words = {}
-  for word in io.open(vim.fn.stdpath("config") .. "/spell/en.utf-8.add", "r"):lines() do
+
+  for word in io.open(path, "r"):lines() do
     table.insert(words, word)
   end
 
-  lspconfig.ltex.setup({
+  lspconfig.ltex.setup {
     settings = {
       ltex = {
+        language ="en-GB",
         dictionary = {
-          ["en-US"] = words,
-        },
-        latex = {
-          commands = {
-            ["\\jurymember{}"] = "ignore",
-            ["\\president{}"] = "ignore",
-            ["\\externaljurymember{}{}"] = "ignore",
-            ["\\tikzstyle{} = []"] = "ignore",
-            ["\\tabfigure{}{}"] = "ignore",
-            ["\\includechapter{}"] = "ignore",
-            ["\\includeappendix{}"] = "ignore",
-            ["\\printpublication{}"] = "ignore",
-          },
-          environments = {
-            ["empheq"] = "ignore",
-          },
+          ['en-US'] = words,
+          ['en-GB'] = words,
         },
       },
     },
-  })
+  }
 end
 
 return M

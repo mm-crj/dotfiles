@@ -58,7 +58,10 @@ keymap("n", "//", ":noh<CR>", opts)
 -- keymap("v", "k", "gk", opts)
 -- keymap("n", "j", "gj", opts)
 -- keymap("n", "k", "gk", opts)
---
+keymap("n", "j", "v:count ? 'j' : 'gj'", { noremap = true, expr = true })
+keymap("n", "k", "v:count ? 'k' : 'gk'", { noremap = true, expr = true })
+keymap("v", "j", "v:count ? 'j' : 'gj'", { noremap = true, expr = true })
+keymap("v", "k", "v:count ? 'k' : 'gk'", { noremap = true, expr = true })
 -- -- For Changing
 -- keymap("n", "cw", "ciw", opts)
 -- keymap("n", "c(", "ci(", opts)

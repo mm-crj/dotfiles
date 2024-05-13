@@ -29,15 +29,10 @@ return {
       -- LSP Support
       { "neovim/nvim-lspconfig" },
       {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-        build = function()
-          pcall(vim.cmd, 'MasonUpdate')
-        end,
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
       },
-      { "williamboman/mason-lspconfig.nvim" },
-
       -- Autocompletion
       { "hrsh7th/nvim-cmp" },
       { "hrsh7th/cmp-buffer" },
@@ -65,6 +60,7 @@ return {
         vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", bufopts)
         vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", bufopts)
         vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", bufopts)
+        vim.keymap.set('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', bufopts)
         vim.keymap.set("n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>", bufopts)
         vim.keymap.set("n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>", bufopts)
         vim.keymap.set("n", "<space>wl", function()
@@ -81,8 +77,26 @@ return {
       --   "bashls",
       --   "ltex"
       -- }
-      require("mason").setup()
-      require("mason-lspconfig").setup()
+
+      require('mason').setup({
+        ui = {
+          icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+          }
+        }
+      })
+      require('mason-lspconfig').setup({
+        -- Replace the language servers listed here
+        -- with the ones you want to install
+        ensure_installed = { 'marksman', 'ltex', 'lua_ls', 'texlab', 'pyright' },
+        handlers = {
+          function(server_name)
+            require('lspconfig')[server_name].setup({})
+          end,
+        },
+      })
       -- further settings
       require "plugins.lsp.lspconfig".setup()
       require "plugins.lsp.luasnip".setup()

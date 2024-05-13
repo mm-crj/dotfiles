@@ -69,11 +69,12 @@ vim.g.maplocalleader = ","
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- Spell check settings
-vim.o.spelllang = "en_us"
+vim.o.spelllang = "en_gb"
 vim.o.spelloptions = "camel"
 vim.g.tex_comment_nospell = 1
-opt.spellfile = vim.env.HOME .. '/.config/nvim/spell/en.utf-8.add'
--- tree sitter settings
+vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+vim.g.spellfile_URL = 'https://ftp.nluug.nl/vim/runtime/spell/'
+
 vim.g.skip_ts_context_commentstring_module = true
 -- nvim-tree specific setting
 vim.g.loaded_netrw = 1

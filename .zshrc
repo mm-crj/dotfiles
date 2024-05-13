@@ -107,6 +107,7 @@ alias df="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 # alias nvim_app="nvim_app -u /home/mmcrjx/.config/nvim_app/init.lua"
 alias mvim="NVIM_APPNAME=mvim nvim"
 alias lvim="NVIM_APPNAME=lvim nvim"
+alias kvim="NVIM_APPNAME=kvim nvim"
 alias python='python3'
 alias top='btop'
 alias zathura='tabbed -c zathura -e'
