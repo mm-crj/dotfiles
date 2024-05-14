@@ -68,6 +68,10 @@ return {
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
+  -- {
+  --   "micangl/cmp-vimtex",
+  --   ft = { "tex" },
+  -- },
   -- LazyGit
   {
     "kdheepak/lazygit.nvim",

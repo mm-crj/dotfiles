@@ -46,7 +46,7 @@ function M.setup()
       ["<C-k>"] = cmp.mapping.scroll_docs(-4),
       ["<C-j>"] = cmp.mapping.scroll_docs(4),
       ['<CR>'] = cmp.mapping.confirm({ select = true }),
-      ['<Tab>'] = cmp.mapping(function(fallback)
+      ['<M-j>'] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
           elseif luasnip.expand_or_jumpable() then
@@ -60,7 +60,7 @@ function M.setup()
           end
         end,
         { "i", "s", "c", }),
-      ['<S-Tab>'] = cmp.mapping(function(fallback)
+      ['<M-k>'] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item()
           elseif luasnip.jumpable(-1) then
@@ -78,6 +78,7 @@ function M.setup()
       { name = "luasnip",                option = { show_autosnippets = true } },
       { name = "copilot" },
       { name = "nvim_lsp" },
+      { name = "vimtex" },
       { name = "nvim_lsp_signature_help" },
       { name = "buffer" },
       { name = "path" },
