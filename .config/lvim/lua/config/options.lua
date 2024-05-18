@@ -75,11 +75,11 @@ vim.g.tex_comment_nospell = 1
 vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 vim.g.spellfile_URL = 'https://ftp.nluug.nl/vim/runtime/spell/'
 -- map Meta+j to right arrowkey in insert mode
-vim.api.nvim_set_keymap('i', '<M-j>', '<Right>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('i', '<M-j>', '<Right>', { noremap = true, silent = true })
 -- set up nvim omnifunc
 
-vim.cmd('filetype plugin on')
-vim.o.omnifunc = 'syntaxcomplete#Complete'
+-- vim.cmd('filetype plugin on')
+-- vim.o.omnifunc = 'syntaxcomplete#Complete'
 
 vim.g.skip_ts_context_commentstring_module = true
 -- nvim-tree specific setting

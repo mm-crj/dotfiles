@@ -108,6 +108,7 @@ alias df="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias mvim="NVIM_APPNAME=mvim nvim"
 alias lvim="NVIM_APPNAME=lvim nvim"
 alias kvim="NVIM_APPNAME=kvim nvim"
+export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 alias python='python3'
 alias top='btop'
 alias zathura='tabbed -c zathura -e'

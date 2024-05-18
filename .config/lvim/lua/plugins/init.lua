@@ -39,13 +39,36 @@ return {
     event = { "InsertEnter" },
     lazy = true,
   },
+  -- session management
   {
-    -- session management
-    "folke/persistence.nvim",
-    event = "BufReadPre",
-    opts = {
-      options = { "buffers", "curdir", "tabpages", "winsize", "help" }
-    },
+    "rmagatti/auto-session",
+    lazy = false,
+    config = function()
+      require("auto-session").setup {
+        log_level = "error",
+        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+      }
+    end,
+    -- cmd = { "SessionSave", "SessionRestore", "SessionDelete" }, -- Commands that will trigger loading the plugin
+  },
+  -- {
+  --   "folke/persistence.nvim",
+  --   event = "BufReadPre",
+  --   opts = {
+  --     options = { "buffers", "curdir", "tabpages", "winsize", "help" }
+  --   },
+  -- },
+
+  -- auto-save
+  {
+    "Pocco81/auto-save.nvim",
+    -- enabled = true,
+    event = "InsertEnter",
+  },
+  -- Undo tree
+  {
+    "mbbill/undotree",
+    cmd = "UndotreeToggle",
   },
   { 'wellle/targets.vim', event = 'InsertEnter' }, -- extends textobjects
   {

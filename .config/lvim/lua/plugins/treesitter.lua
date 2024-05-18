@@ -22,9 +22,6 @@ return {
         "python",
         "query",
         "regex",
-        "latex",
-        "vim",
-        "vimdoc",
         "yaml",
         "julia",
       },
@@ -32,7 +29,7 @@ return {
       autopairs = { enable = true },
       highlight = {
         enable = true,             -- false will disable the whole extension
-        disable = { "help", "latex" }, -- list of language that will be disabled
+        disable = { "help", "latex", "vimdoc" }, -- list of language that will be disabled
         additional_vim_regex_highlighting = {'org'},
       },
       indent = { enable = true },

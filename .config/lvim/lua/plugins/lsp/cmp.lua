@@ -46,11 +46,9 @@ function M.setup()
       ["<C-k>"] = cmp.mapping.scroll_docs(-4),
       ["<C-j>"] = cmp.mapping.scroll_docs(4),
       ['<CR>'] = cmp.mapping.confirm({ select = true }),
-      ['<M-j>'] = cmp.mapping(function(fallback)
+      ['<Tab>'] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
-          elseif luasnip.expand_or_jumpable() then
-            luasnip.expand_or_jump()
           elseif neogen.jumpable() then
             neogen.jump_next()
           elseif has_words_before() then
@@ -60,11 +58,9 @@ function M.setup()
           end
         end,
         { "i", "s", "c", }),
-      ['<M-k>'] = cmp.mapping(function(fallback)
+      ['<S-Tab>'] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item()
-          elseif luasnip.jumpable(-1) then
-            luasnip.jump(-1)
           elseif neogen.jumpable(true) then
             neogen.jump_prev()
           else
@@ -72,9 +68,24 @@ function M.setup()
           end
         end,
         { "i", "s", "c", }),
+      ["<M-j>"] = cmp.mapping(function(fallback)
+          if luasnip.jumpable(1) then
+            luasnip.jump(1)
+          else
+            fallback()
+          end
+        end,
+        { "i"}),
+      ["<M-k>"] = cmp.mapping(function(fallback)
+          if luasnip.jumpable(-1) then
+            luasnip.jump(-1)
+          else
+            fallback()
+          end
+        end,
+        { "i"}),
     },
     sources = {
-      { name = "omni" },
       { name = "luasnip",                option = { show_autosnippets = true } },
       { name = "copilot" },
       { name = "nvim_lsp" },

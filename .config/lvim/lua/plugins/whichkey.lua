@@ -156,11 +156,13 @@ return {
           u = { "<cmd>PackerUpdate<cr>", "Update" },
         },
         s = {
-          name = "Session",
-          c = { function() require("persistence").load() end, "Restore Session for Curr. Dir." },
-          r = { function() require("persistence").load({ last = true }) end, "Restore Last Session" },
-          d = { function() require("persistence").stop() end, "Don't Save Current Session" },
+          name = "Source/Session",
+          a = { "<cmd>ASToggle<cr>", "Auto Save" },
+          c = { "<cmd>ReloadConfig<cr>", "Config" },
+          d = { "<cmd>SessionDelete<cr>", "Delete" },
           l = { "<cmd>source ~/.config/nvim/lua/user/lsp/luasnip.lua<cr>", "LuaSnippets" },
+          s = { "<cmd>SessionSave<cr>", "Save" },
+          r = { "<cmd>SessionRestore<cr>", "Restore" },
         },
         t = {
           name = "Toggle",
