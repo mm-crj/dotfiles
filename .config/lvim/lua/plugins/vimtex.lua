@@ -1,9 +1,9 @@
 return {
   {
     "lervag/vimtex",
-    tag = "v2.15",
-    -- lazy = false,
-    ft = { "tex", "bib" },
+    -- tag = "v2.15",
+    lazy = false,
+    ft = { 'tex', 'bib' },
     config = function()
       -- requires ~/.latexmkrc for nomenclature, glossary generation
       vim.g.vimtex_quickfix_mode = 0
@@ -27,6 +27,7 @@ return {
 
       vim.g.vimtex_view_general_viewer = 'zathura'
       -- vim.g.vimtex_view_general_options = '--unique @pdf#src:@tex:@line:@col'
+      -- vim.g.vimtex_compiler_progname = 'nvr'
       vim.g.vimtex_view_method = 'zathura'
       vim.g.vimtex_compiler_latexmk = {
         out_dir    = 'build',
@@ -39,6 +40,7 @@ return {
           '-file-line-error',
           '-synctex=1',
           '-interaction=nonstopmode',
+          -- '-lualatex',
         },
       }
       -- vim.g.vimtex_view_general_options_latexmk='--unique'

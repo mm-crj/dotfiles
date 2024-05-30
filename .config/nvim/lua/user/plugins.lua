@@ -88,7 +88,7 @@ return packer.startup(function(use)
     requires = { 'nvim-telescope/telescope.nvim' }
   }
   use "machakann/vim-sandwich"
-  use {"lervag/vimtex", tag ='v2.15' }
+  use {"lervag/vimtex" }
   use "lukas-reineke/indent-blankline.nvim"
   use "goolord/alpha-nvim" -- home page
   use { "folke/which-key.nvim" }

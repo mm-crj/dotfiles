@@ -104,12 +104,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias df="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias mvim="NVIM_APPNAME=mvim nvim"
+# export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 alias lvim="NVIM_APPNAME=lvim nvim"
+alias mvim="NVIM_APPNAME=mvim nvim"
 alias python='python3'
 alias top='btop'
 alias cat='batcat'
-alias zathura='tabbed -c zathura -e'
+# alias zathura='tabbed -c zathura -e'
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/var/lib/flathub/
 export PATH=$PATH:~/.local/bin
@@ -131,19 +132,17 @@ fi
 source ~/.zsh-plugins/zsh-snap/znap.zsh  # Start Znap
 
 # `znap prompt` makes your prompt visible in just 15-40ms!
-znap prompt sindresorhus/pure  #vi-mode is default with this 
+znap prompt sindresorhus/pure  #vi-mode is default with this
 
 # `znap source` automatically downloads and starts your plugins.
 znap source ohmyzsh/ohmyzsh lib/{git,theme-and-appearance}
 znap source ohmyzsh/ohmyzsh plugins/{git,ssh-agent,colored-man-pages,fzf,z}
 znap source marlonrichert/zsh-autocomplete
-znap install esc/conda-zsh-completion 
+znap install esc/conda-zsh-completion
 
 znap source zsh-users/zsh-autosuggestions
 ZSH_AUTOSUGGEST_STRATEGY=( history completion )
 
-znap source zdharma-continuum/fast-syntax-highlighting
-ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets )
 
 
 # Completion suggestions from man pages (using Tab)
@@ -170,6 +169,9 @@ export NVM_DIR="$HOME/.config/nvm"
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+znap source zdharma-continuum/fast-syntax-highlighting
+ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets )
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

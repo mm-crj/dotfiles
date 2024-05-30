@@ -321,6 +321,17 @@ return {
     ),
     { condition = tex_utils.in_mathzone, show_condition = tex_utils.in_mathzone }
   ),
+
+  s({ trig = "uline",wordTrig = true,snippetType = 'autosnippet', dscr = "underline" },
+    fmta("\\underline{<>}<>",
+      {
+        i(1),
+        i(0),
+      }
+    ),
+    { condition = tex_utils.in_mathzone, show_condition = tex_utils.in_mathzone }
+  ),
+
   --[[ \dfrac{\mathup{d}{#1}}{\mathup{dt}} ]]
   --
   parse({ trig = "partial_derivative", wordTrig = true, dscr = 'partial derivative' },
@@ -599,14 +610,6 @@ return {
 
   s({ trig = "emph", dscr = "\\emph{$VISUAL}" },
     fmta("\\emph{<>}",
-      {
-        d(1, get_visual),
-      }
-    )
-  ),
-
-  s({ trig = "underline", dscr = "\\underline{$VISUAL}" },
-    fmta("\\underline{<>}",
       {
         d(1, get_visual),
       }

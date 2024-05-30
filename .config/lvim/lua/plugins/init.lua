@@ -39,7 +39,7 @@ return {
     event = { "InsertEnter" },
     lazy = true,
   },
-    -- session management
+  -- session management
   {
     "rmagatti/auto-session",
     lazy = false,
@@ -50,7 +50,7 @@ return {
       }
     end,
     -- cmd = { "SessionSave", "SessionRestore", "SessionDelete" }, -- Commands that will trigger loading the plugin
-    },
+  },
   -- {
   --   "folke/persistence.nvim",
   --   event = "BufReadPre",
@@ -62,8 +62,7 @@ return {
   -- auto-save
   {
     "Pocco81/auto-save.nvim",
-    -- enabled = true,
-    event = "InsertEnter",
+    lazy = false,
   },
   -- Undo tree
   {
@@ -113,23 +112,23 @@ return {
     -- setting the keybinding for LazyGit with 'keys' is recommended in
     -- order to load the plugin when the command is run for the first time
   },
-{
-  'nvim-orgmode/orgmode',
-  event = 'VeryLazy',
-  ft = { 'org' },
-  config = function()
-    -- Setup orgmode
-    require('orgmode').setup({
-      org_agenda_files = '~/Documents/My_Projects/Agenda/**/*',
-      org_default_notes_file = '~/Documents/My_Projects/Agenda/refile.org',
-    })
+  {
+    'nvim-orgmode/orgmode',
+    event = 'VeryLazy',
+    ft = { 'org' },
+    config = function()
+      -- Setup orgmode
+      require('orgmode').setup({
+        org_agenda_files = '~/Documents/My_Projects/Agenda/**/*',
+        org_default_notes_file = '~/Documents/My_Projects/Agenda/refile.org',
+      })
 
-    -- NOTE: If you are using nvim-treesitter with `ensure_installed = "all"` option
-    -- add `org` to ignore_install
-    -- require('nvim-treesitter.configs').setup({
-    --   ensure_installed = 'all',
-    --   ignore_install = { 'org' },
-    -- })
-  end,
-},
+      -- NOTE: If you are using nvim-treesitter with `ensure_installed = "all"` option
+      -- add `org` to ignore_install
+      -- require('nvim-treesitter.configs').setup({
+      --   ensure_installed = 'all',
+      --   ignore_install = { 'org' },
+      -- })
+    end,
+  },
 }

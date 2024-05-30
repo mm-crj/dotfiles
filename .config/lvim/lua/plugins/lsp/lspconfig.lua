@@ -52,27 +52,38 @@ function M.setup()
     },
   })
   lspconfig.texlab.setup({
-    settings = {
-      texlab = {
-        chktex = {
-          onEdit = true,
-          onOpenAndSave = true,
-        },
-        forwardSearch = {
-          executable = "zathura",
-          args = { "--synctex-forward", "%l:1:%f", "%p" },
-        },
-        build = {
-          executable = "latexmk",
-          args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
-          onSave = true,
-        },
-      },
+    latexFormater = {
+      exe = "latexindent",
+      args = { "-w" },
+      stdin = true,
+    },
+    bibtexFormatter = "bibtex-tidy",
+    latexindent = {
+      modifyLineBreaks = false,
     },
   })
+  -- lspconfig.texlab.setup({
+  --   settings = {
+  --     texlab = {
+  --       chktex = {
+  --         onEdit = true,
+  --         onOpenAndSave = true,
+  --       },
+  --       forwardSearch = {
+  --         executable = "zathura",
+  --         args = { "--synctex-forward", "%l:1:%f", "%p" },
+  --       },
+  --       build = {
+  --         executable = "latexmk",
+  --         args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+  --         onSave = true,
+  --       },
+  --     },
+  --   },
+  -- })
 
 
- local path = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+  local path = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
   local words = {}
 
   for word in io.open(path, "r"):lines() do
@@ -82,7 +93,7 @@ function M.setup()
   lspconfig.ltex.setup {
     settings = {
       ltex = {
-        language ="en-GB",
+        language = "en-GB",
         dictionary = {
           ['en-US'] = words,
           ['en-GB'] = words,
