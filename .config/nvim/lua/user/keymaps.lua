@@ -24,6 +24,7 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+
 -- Better buffer navigation
 keymap("n", "<M-l>", ":bNext<CR>", opts)
 keymap("n", "<M-h>", ":bprevious<CR>", opts)
@@ -66,14 +67,16 @@ keymap('n', '//', ':noh<CR>', opts)
 -- -- keymap("i", "jj", "<ESC>", opts)
 -- -- keymap("i", "hh", "<ESC>", opts)
 --
--- -- For navigation (treat line breaks as new lines)
--- keymap("v", "j", "gj", opts)
--- keymap("v", "k", "gk", opts)
--- keymap("n", "j", "gj", opts)
--- keymap("n", "k", "gk", opts)
---
---
--- -- For Changing
+-- For navigation (treat line breaks as new lines)
+keymap("v", "j", "gj", opts)
+keymap("v", "k", "gk", opts)
+keymap("n", "j", "gj", opts)
+keymap("n", "k", "gk", opts)
+-- keymap("n", "j", "v:count ? 'j' : 'gj'", { noremap = true, expr = true })
+-- keymap("n", "k", "v:count ? 'k' : 'gk'", { noremap = true, expr = true })
+-- keymap("v", "j", "v:count ? 'j' : 'gj'", { noremap = true, expr = true })
+-- keymap("v", "k", "v:count ? 'k' : 'gk'", { noremap = true, expr = true })
+-- -- -- For Changing
 -- keymap("n", "cw", "ciw", opts)
 -- keymap("n", "c(", "ci(", opts)
 -- keymap("n", "c{", "ci{", opts)

@@ -1,5 +1,5 @@
 -- ----------------------------------------------------------------------------
--- See https://www.egmastnak.com/tutorials/vim-latex/luasnip.html#tldr-hello-world-example
+-- See https://www.ejmastnak.com/tutorials/vim-latex/luasnip.html#tldr-hello-world-example
 -- Summary: If `SELECT_RAW` is populated with a visual selection, the function
 -- returns an insert node whose initial text is set to the visual selection.
 -- If `SELECT_RAW` is empty, the function simply returns an empty insert node.
@@ -31,6 +31,10 @@ end
 
 tex_utils.in_itemize = function()
   return tex_utils.in_env("itemize")
+end
+
+tex_utils.in_enumerate = function()
+  return tex_utils.in_env("enumerate")
 end
 
 -- ----------------------------------------------------------------------------
@@ -319,6 +323,17 @@ return {
     ),
     { condition = tex_utils.in_mathzone, show_condition = tex_utils.in_mathzone }
   ),
+
+  s({ trig = "uline",wordTrig = true,snippetType = 'autosnippet', dscr = "underline" },
+    fmta("\\underline{<>}<>",
+      {
+        i(1),
+        i(0),
+      }
+    ),
+    { condition = tex_utils.in_mathzone, show_condition = tex_utils.in_mathzone }
+  ),
+
   --[[ \dfrac{\mathup{d}{#1}}{\mathup{dt}} ]]
   --
   parse({ trig = "partial_derivative", wordTrig = true, dscr = 'partial derivative' },
@@ -510,6 +525,17 @@ return {
       \\item  ${1} \n \
       \\end{enumerate}"),
 
+  s({ trig = "it", wordTrig = true, snippetType = 'autosnippet', dscr = '\\item' },
+    fmta(
+      "\\item <>",
+      { i(0), }
+    ),
+    {
+      condition = tex_utils.in_enumerate,
+      show_condition = tex_utils.in_enumerate
+    }
+  ),
+
   parse({ trig = "bmatrix", wordTrig = true, dscr = 'begin matrix' },
     " \\begin{bmatrix} \n \
         $1 & $2 \\\\ \
@@ -558,6 +584,55 @@ return {
             \\label{fig:${12:three graphs}} \
     \\end{figure} "),
 
+  parse({ trig = "norm", wordTrig = true },
+    "\\lVert ${1:$SELECT_DEDENT} \\rVert"),
+
+  parse({ trig = "*", wordTrig = true },
+    "\\cdot "),
+
+  parse({ trig = "sum", wordTrig = true },
+    [[\sum_{$1}^{$2}]]),
+
+  parse({ trig = "int", wordTrig = true },
+    [[\int_{${1:lower}}^{${2:upper}} $3 \\,d$4]]),
+
+  parse({ trig = "lim", wordTrig = true },
+    [[\lim_{${1:lower}}^{${2:upper}} $3 \\,d$4]]),
+  parse({ trig = "partial_derivative", wordTrig = true, dscr = 'partial derivative' },
+    [[\frac{\partial ${1:f(x)}}{\partial ${2:x}} $0]]),
+  s({ trig = "hr", dscr = "The hyperref package's href{}{} command (for url links)" },
+    fmta(
+      [[\href{<>}{<>}]],
+      {
+        i(1, "url"),
+        i(2, "display name"),
+      }
+    )
+  ),
+
+  s({ trig = "emph", dscr = "\\emph{$VISUAL}" },
+    fmta("\\emph{<>}",
+      {
+        d(1, get_visual),
+      }
+    )
+  ),
+
+  s({ trig = "textbf", dscr = "\\textbf{$VISUAL}" },
+    fmta("\\textbf{<>}",
+      {
+        d(1, get_visual),
+      }
+    )
+  ),
+
+  s({ trig = "bm", dscr = "bold math \\bm{$VISUAL}" },
+    fmta("\\bm{<>}",
+      {
+        d(1, get_visual),
+      }
+    )
+  ),
 
   -- Some Templates ------------------------------------------
   parse({ trig = "template_standalone", wordTrig = true, dscr = 'standalone figure' },

@@ -13,16 +13,16 @@ return {
       })
     end,
   },
-  {
-    "zbirenbaum/copilot-cmp",
-    event = "InsertEnter",
-    config = function()
-      require("copilot_cmp").setup({
-        method = "getCompletionsCycling",
-      })
-    end,
-    dependencies = { "zbirenbaum/copilot.lua", "hrsh7th/nvim-cmp" },
-  },
+  -- {
+  --   "zbirenbaum/copilot-cmp",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("copilot_cmp").setup({
+  --       method = "getCompletionsCycling",
+  --     })
+  --   end,
+  --   dependencies = { "zbirenbaum/copilot.lua", "hrsh7th/nvim-cmp" },
+  -- },
   {
     "VonHeikemen/lsp-zero.nvim",
     dependencies = {

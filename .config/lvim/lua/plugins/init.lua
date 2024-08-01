@@ -63,7 +63,8 @@ return {
   {
     "Pocco81/auto-save.nvim",
     -- enabled = true,
-    event = "InsertEnter",
+    -- event = "InsertEnter",
+    lazy = false,
   },
   -- Undo tree
   {
@@ -91,10 +92,6 @@ return {
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
-  -- {
-  --   "micangl/cmp-vimtex",
-  --   ft = { "tex" },
-  -- },
   -- LazyGit
   {
     "kdheepak/lazygit.nvim",

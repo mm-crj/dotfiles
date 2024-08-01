@@ -1,6 +1,8 @@
 return {
   {
     "folke/which-key.nvim",
+    tag = "v2.1.0",
+    event = "VeryLazy",
     --[[ event = "VeryLazy", ]]
     --[[ cmd = { "WhichKey" }, ]]
     lazy = true,
@@ -151,18 +153,22 @@ return {
           name = "Packer",
           l = { "<cmd>Lazy<cr>", "Lazy" },
           m = { "<cmd>Mason<cr>", "Mason" },
-          i = { "<cmd>PackerInstall<cr>", "Install" },
-          s = { "<cmd>PackerSync<cr>", "Sync" },
-          u = { "<cmd>PackerUpdate<cr>", "Update" },
+          -- i = { "<cmd>PackerInstall<cr>", "Install" },
+          -- s = { "<cmd>PackerSync<cr>", "Sync" },
+          -- u = { "<cmd>PackerUpdate<cr>", "Update" },
         },
         s = {
           name = "Source/Session",
-          a = { "<cmd>ASToggle<cr>", "Auto Save" },
-          c = { "<cmd>ReloadConfig<cr>", "Config" },
-          d = { "<cmd>SessionDelete<cr>", "Delete" },
+          -- a = { "<cmd>ASToggle<cr>", "Auto Save" },
+          -- c = { "<cmd>ReloadConfig<cr>", "Config" },
+          -- d = { "<cmd>SessionDelete<cr>", "Delete" },
+          -- s = { "<cmd>SessionSave<cr>", "Save" },
+          -- r = { "<cmd>SessionRestore<cr>", "Restore" },
+
           l = { "<cmd>source ~/.config/nvim/lua/user/lsp/luasnip.lua<cr>", "LuaSnippets" },
-          s = { "<cmd>SessionSave<cr>", "Save" },
-          r = { "<cmd>SessionRestore<cr>", "Restore" },
+          r = { function() require("presistance").load() end, "Restore Session for Curr. Dir." },
+          s = { function() require("presistance").load({ last = true }) end, "Restore Last Session" },
+          d = { function() require("presistance").stop() end, "Don't Save Current Session" },
         },
         t = {
           name = "Toggle",

@@ -105,13 +105,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias df="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 # alias nvim_app="nvim_app -u /home/mmcrjx/.config/nvim_app/init.lua"
+# export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 alias mvim="NVIM_APPNAME=mvim nvim"
 alias lvim="NVIM_APPNAME=lvim nvim"
 alias kvim="NVIM_APPNAME=kvim nvim"
-export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 alias python='python3'
 alias top='btop'
-alias zathura='tabbed -c zathura -e'
+# alias zathura='tabbed -c zathura -e'
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/var/lib/flathub/
 export PATH=$PATH:~/.local/bin
