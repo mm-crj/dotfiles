@@ -40,24 +40,31 @@ return {
     lazy = true,
   },
   -- session management
-  {
-    "rmagatti/auto-session",
-    lazy = false,
-    config = function()
-      require("auto-session").setup {
-        log_level = "error",
-        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-      }
-    end,
-    -- cmd = { "SessionSave", "SessionRestore", "SessionDelete" }, -- Commands that will trigger loading the plugin
-  },
   -- {
-  --   "folke/persistence.nvim",
-  --   event = "BufReadPre",
-  --   opts = {
-  --     options = { "buffers", "curdir", "tabpages", "winsize", "help" }
-  --   },
+  --   "rmagatti/auto-session",
+  --   lazy = false,
+  --   config = function()
+  --     require("auto-session").setup {
+  --       pre_save_cmds = { "NvimTreeClose" },
+  --       save_extra_cmds = {
+  --         "NvimTreeOpen"
+  --       },
+  --       post_restore_cmds = {
+  --         "NvimTreeOpen"
+  --       },
+  --       log_level = "error",
+  --       auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+  --     }
+  --   end,
+    -- cmd = { "SessionSave", "SessionRestore", "SessionDelete" }, -- Commands that will trigger loading the plugin
   -- },
+  {
+    "folke/persistence.nvim",
+    event = "BufReadPre",
+    opts = {
+      options = { "buffers", "curdir", "tabpages", "winsize", "help" }
+    },
+  },
 
   -- auto-save
   {
@@ -69,6 +76,7 @@ return {
     "mbbill/undotree",
     cmd = "UndotreeToggle",
   },
+
   { 'wellle/targets.vim', event = 'InsertEnter' }, -- extends textobjects
   {
     "p00f/nvim-ts-rainbow",

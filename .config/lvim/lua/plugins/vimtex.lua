@@ -10,20 +10,20 @@ return {
       vim.g.vimtex_quickfix_open_on_warning = 0
 
       -- Disable custom warnings based on regexp
-      vim.g.vimtex_quickfix_ignore_filters = {
-        ' Marginpar on page ',
-        ' Underfull ',
-        ' Overfull ',
-        ' hyperref ',
-        ' typearea ',
-        ' Delete this space ',
-        ' Non-breaking space ',
-        ' Interword spacing ',
-        ' Use either ',
-        ' Delete this space ',
-        ' You should ',
-        ' Entry with key ',
-      }
+      -- vim.g.vimtex_quickfix_ignore_filters = {
+      --   ' Marginpar on page ',
+      --   ' Underfull ',
+      --   ' Overfull ',
+      --   ' hyperref ',
+      --   ' typearea ',
+      --   ' Delete this space ',
+      --   ' Non-breaking space ',
+      --   ' Interword spacing ',
+      --   ' Use either ',
+      --   ' Delete this space ',
+      --   ' You should ',
+      --   ' Entry with key ',
+      -- }
 
       vim.g.vimtex_view_general_viewer = 'zathura'
       -- vim.g.vimtex_view_general_options = '--unique @pdf#src:@tex:@line:@col'

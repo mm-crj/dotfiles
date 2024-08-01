@@ -35,12 +35,12 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 })
 -- remove trailing whitespaces on save
 
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  group = augroup,
-  desc = "Remove trailing whitespaces on save",
-  pattern = "*",
-  command = [[%s/\s\+$//e]],
-})
+-- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+--   group = augroup,
+--   desc = "Remove trailing whitespaces on save",
+--   pattern = "*",
+--   command = [[%s/\s\+$//e]],
+-- })
 -- don't auto comment new line
 vim.api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
   desc = "don't auto comment new line",

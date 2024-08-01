@@ -137,6 +137,9 @@ znap prompt sindresorhus/pure  #vi-mode is default with this
 # `znap source` automatically downloads and starts your plugins.
 znap source ohmyzsh/ohmyzsh lib/{git,theme-and-appearance}
 znap source ohmyzsh/ohmyzsh plugins/{git,ssh-agent,colored-man-pages,fzf,z}
+znap source zdharma-continuum/fast-syntax-highlighting
+ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets )
+
 znap source marlonrichert/zsh-autocomplete
 znap install esc/conda-zsh-completion
 
@@ -170,8 +173,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-znap source zdharma-continuum/fast-syntax-highlighting
-ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets )
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
