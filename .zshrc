@@ -7,6 +7,10 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+# add miniforge to path
+export PATH=$HOME/miniforge3/bin:$PATH
+
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -74,7 +78,7 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-#plugins=(git)
+# plugins=(web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -136,7 +140,7 @@ znap prompt sindresorhus/pure  #vi-mode is default with this
 
 # `znap source` automatically downloads and starts your plugins.
 znap source ohmyzsh/ohmyzsh lib/{git,theme-and-appearance}
-znap source ohmyzsh/ohmyzsh plugins/{git,ssh-agent,colored-man-pages,fzf,z}
+znap source ohmyzsh/ohmyzsh plugins/{git,ssh-agent,colored-man-pages,fzf,z,web-search}
 znap source zdharma-continuum/fast-syntax-highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets )
 

@@ -87,7 +87,7 @@ function M.setup()
     },
     sources = {
       { name = "luasnip",                option = { show_autosnippets = true } },
-      { name = "copilot" },
+      -- { name = "copilot" },
       { name = "nvim_lsp" },
       { name = "vimtex" },
       { name = "nvim_lsp_signature_help" },
