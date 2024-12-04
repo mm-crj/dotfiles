@@ -44,7 +44,7 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Clear search results with //
-keymap("n", "//", ":noh<CR>", opts)
+keymap("n", "<Esc>", ":noh<CR>", opts)
 
 -- -- Move to beginning and end of line from home row
 -- -- in both normal and visual mode

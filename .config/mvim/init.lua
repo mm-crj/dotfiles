@@ -6,6 +6,7 @@ local opts = { noremap = true, silent = true }
 
 -- Set the key mapping
 vim.api.nvim_set_keymap("n", "//", ":noh<CR>", opts)
-
+vim.opt.packpath:append('/home/mmcrjx/.local/share/mvim/site/pack/plugins/')
+require'lspconfig'.pyright.setup{}
 
 

@@ -90,17 +90,17 @@ function M.setup()
     table.insert(words, word)
   end
 
-  lspconfig.ltex.setup {
-    settings = {
-      ltex = {
-        language = "en-GB",
-        dictionary = {
-          ['en-US'] = words,
-          ['en-GB'] = words,
-        },
-      },
-    },
-  }
+  -- lspconfig.ltex.setup {
+  --   settings = {
+  --     ltex = {
+  --       language = "en-GB",
+  --       dictionary = {
+  --         ['en-US'] = words,
+  --         ['en-GB'] = words,
+  --       },
+  --     },
+  --   },
+  -- }
 end
 
 return M
