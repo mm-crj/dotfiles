@@ -8,6 +8,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# set up julia depot
+export JULIA_DEPOT_PATH="$HOME/.julia"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -107,15 +110,16 @@ alias df="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 # alias nvim_app="nvim_app -u /home/mmcrjx/.config/nvim_app/init.lua"
 # export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 alias mvim="NVIM_APPNAME=mvim nvim"
-alias lvim="NVIM_APPNAME=lvim nvim"
+alias pvim="NVIM_APPNAME=pvim nvim"
 alias kvim="NVIM_APPNAME=kvim nvim"
 alias python='python3'
 alias top='btop'
 # alias zathura='tabbed -c zathura -e'
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/var/lib/flathub/
-export PATH=$PATH:~/.local/bin
+export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.config/nvm/versions/node/v18.7.0/bin/
+export PATH=$PATH:$HOME/miniforge3/bin/
 
 # Nvim as manpager
 if [[ "$(command -v nvim)" ]]; then
