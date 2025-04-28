@@ -9,7 +9,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 # add miniforge to path
 export PATH=$HOME/miniforge3/bin:$PATH
-
+# tex-local home
+export TEXMFHOME="$HOME/texmf"
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 # Set name of the theme to load --- if set to "random", it will
@@ -109,7 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias df="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 # export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
-alias lvim="NVIM_APPNAME=lvim nvim"
+alias lvim="NVIM_APPNAME=lvim nvim10"
 alias mvim="NVIM_APPNAME=mvim nvim"
 alias python='python3'
 alias top='btop'
@@ -151,6 +152,18 @@ znap source zsh-users/zsh-autosuggestions
 ZSH_AUTOSUGGEST_STRATEGY=( history completion )
 
 
+zstyle ':completion:*' completer _extensions _complete _approximate
+# zsh cache and the cache-path
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
+# zsh selection menu
+zstyle ':completion:*' menu select
+# zsh file sort
+zstyle ':completion:*:*:cp:*' file-sort size reverse
+zstyle ':completion:*' file-sort modification
+
+# ls -l like info list of files and folders
+zstyle ':completion:*' file-list all
 
 # Completion suggestions from man pages (using Tab)
 zstyle ':completion:*:manuals'    separate-sections true

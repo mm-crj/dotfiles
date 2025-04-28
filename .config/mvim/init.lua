@@ -1,12 +1,13 @@
-vim.o.number=true
-vim.o.relativenumber=true
-vim.o.compatible=false
--- Define the options table
-local opts = { noremap = true, silent = true }
+-- Neovim Configuration
+require 'user.options'
+require 'user.keymaps'
+require 'user.autocommands'
+require 'user.lspconfig'
+require 'user.quickfix'
 
--- Set the key mapping
-vim.api.nvim_set_keymap("n", "//", ":noh<CR>", opts)
-vim.opt.packpath:append('/home/mmcrjx/.local/share/mvim/site/pack/plugins/')
-require'lspconfig'.pyright.setup{}
+-- Colorscheme
+vim.opt.termguicolors = true
+vim.cmd [[colorscheme slate]] -- habamax, sorbet
 
-
+-- vim.lsp.set_log_level("debug")
+--vim.lsp.diagnostic.set_loclist()

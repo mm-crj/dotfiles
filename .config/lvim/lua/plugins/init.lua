@@ -9,6 +9,7 @@ return {
       }
     end,
   },
+
   { "tpope/vim-repeat",   event = "VeryLazy" },
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -78,10 +79,10 @@ return {
   },
 
   { 'wellle/targets.vim', event = 'InsertEnter' }, -- extends textobjects
-  {
-    "p00f/nvim-ts-rainbow",
-    event = { "BufReadPost" },
-  },
+  -- {
+  --   "p00f/nvim-ts-rainbow",
+  --   event = { "BufReadPost" },
+  -- },
   {
     "vladdoster/remember.nvim",
     lazy = false,

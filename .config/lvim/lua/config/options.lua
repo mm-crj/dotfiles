@@ -32,7 +32,7 @@ opt.relativenumber = true
 opt.scrollback = 100000
 opt.scrolloff = 999 -- is one of my fav
 opt.shiftround = true
-opt.shiftwidth = 2
+opt.shiftwidth = 4
 opt.shortmess:append { W = true, I = true, c = true }
 opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
 opt.showtabline = 2 -- always show tabs
