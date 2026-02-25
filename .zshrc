@@ -123,7 +123,7 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.config/nvm/versions/node/v18.7.0/bin/
 export PATH=$PATH:$HOME/miniforge3/bin/
 # export DICPATH="$HOME/.hunspell";
-
+[ -f ~/.zsh_secrets ] && source ~/.zsh_secrets
 # Nvim as manpager
 if [[ "$(command -v nvim)" ]]; then
     export VISUAL='nvim'
