@@ -82,8 +82,9 @@ return {
 
   { 'wellle/targets.vim', event = 'InsertEnter' }, -- extends textobjects
   {
-    "p00f/nvim-ts-rainbow",
+    "HiPhish/rainbow-delimiters.nvim",
     event = { "BufReadPost" },
+    -- use rainbow delimitiers https://gitlab.com/HiPhish/rainbow-delimiters.nvim
   },
   {
     "vladdoster/remember.nvim",
@@ -97,9 +98,13 @@ return {
   -- install without yarn or npm
   {
     "iamcco/markdown-preview.nvim",
+    lazy = false,
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
+    build = function()
+      vim.cmd [[Lazy load markdown-preview.nvim]]
+      vim.fn['mkdp#util#install']()
+    end,
   },
   {
     "kawre/leetcode.nvim",
@@ -125,6 +130,10 @@ return {
   --   ft = { "tex" },
   -- },
   -- LazyGit
+  -- {"vigoux/ltex-ls.nvim",
+  --   lazy = false,
+  --   dependencies = {"neovim/nvim-lspconfig"}
+  -- },
   {
     "kdheepak/lazygit.nvim",
     lazy = false,

@@ -1,6 +1,6 @@
 set synctex true
 set synctex-editor-command "nvr --remote-silent +%{line} %{input}"
-set highlight-transparency 0.1
+set highlight-transparency 0.2
 set selection-clipboard clipboard
 # Tokyonight color theme for Zathura
 # Swaps Foreground for Background to get a light version if the user prefers
@@ -27,8 +27,8 @@ set inputbar-bg "#222436"
 set inputbar-fg "#c8d3f5"
 set statusbar-bg "#222436"
 set statusbar-fg "#c8d3f5"
-set highlight-color "#ffc777"
-set highlight-active-color "#c3e88d"
+set highlight-color "rgba(0,188,0,1.0)"
+set highlight-active-color "rgba(159,251,0,1.0)"
 set default-bg "#222436"
 set default-fg "#c8d3f5"
 set render-loading true
@@ -40,4 +40,5 @@ set render-loading-bg "#c8d3f5"
 #
 set recolor-lightcolor "#222436"
 set recolor-darkcolor "#c8d3f5"
-set recolor-keephue             true      # keep original color
+set recolor-keephue   true      # keep original color
+set incremental-search true

@@ -1,31 +1,24 @@
 return {
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = "Copilot",
-  --   event = "InsertEnter",
-  --   config = function()
-  --     require("copilot").setup({
-  --       suggestion = {
-  --         enabled = false,
-  --         auto_trigger = true,
-  --       },
-  --       panel = { enabled = false },
-  --     })
-  --   end,
-  -- },
-  --
   {
     "VonHeikemen/lsp-zero.nvim",
     dependencies = {
       -- LSP Support
       { "neovim/nvim-lspconfig" },
+      -- {
+      --   "williamboman/mason.nvim",
+      --   "williamboman/mason-lspconfig.nvim",
+      --   "neovim/nvim-lspconfig",
+      --   build = function()
+      --     pcall(vim.cmd, 'MasonUpdate')
+      --   end,
+      -- },
       {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        "neovim/nvim-lspconfig",
-        build = function()
-          pcall(vim.cmd, 'MasonUpdate')
-        end,
+        "mason-org/mason-lspconfig.nvim",
+        opts = {},
+        dependencies = {
+          { "mason-org/mason.nvim", opts = {} },
+          "neovim/nvim-lspconfig",
+        },
       },
       { "williamboman/mason-lspconfig.nvim" },
 
@@ -111,8 +104,6 @@ return {
       lsp_zero.setup()
     end,
   },
-
-
   {
     "nvimtools/none-ls.nvim",
     event = "BufReadPre",
@@ -129,8 +120,7 @@ return {
           null_ls.builtins.formatting.black,
           null_ls.builtins.formatting.isort,
           null_ls.builtins.formatting.prettier.with({
-            filetypes = {
-              'javascript',
+            filetypes = { 'javascript',
               'typescript',
               'css',
               'scss',
@@ -141,8 +131,7 @@ return {
               'yaml',
               'norg'
             },
-            extra_args = {
-              '--prose-wrap',
+            extra_args = { '--prose-wrap',
               'always',
               '--print-width',
               '80' },
@@ -152,7 +141,6 @@ return {
       }
     end,
   },
-
   {
     'ray-x/lsp_signature.nvim',
     event = { "BufReadPost" },

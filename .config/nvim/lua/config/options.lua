@@ -70,8 +70,9 @@ vim.g.maplocalleader = ","
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- Spell check settings
-vim.o.spelllang = "en_gb"
-vim.o.spelloptions = "camel"
+vim.opt.spell=true
+vim.opt.spelllang=en_gb
+vim.opt.spelloptions = "camel"
 vim.g.tex_comment_nospell = 1
 vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 vim.g.spellfile_URL = 'https://ftp.nluug.nl/vim/runtime/spell/'

@@ -83,8 +83,10 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
+# if [ -d ~/texmf ]; then
+#   export TEXMFHOME="/usr/local/share/texmf"
+#   export TEXMFLOCAL="$HOME/texmf"
+# fi
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -120,6 +122,7 @@ export PATH=$PATH:/var/lib/flathub/
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.config/nvm/versions/node/v18.7.0/bin/
 export PATH=$PATH:$HOME/miniforge3/bin/
+# export DICPATH="$HOME/.hunspell";
 
 # Nvim as manpager
 if [[ "$(command -v nvim)" ]]; then
@@ -192,9 +195,9 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-export PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
-export MANPATH="/usr/local/texlive/2023/texmf-dist/doc/man:$MANPATH"
-export INFOPATH="/usr/local/texlive/2023/texmf-dist/doc/info:$INFOPATH"
+# export PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
+# export MANPATH="/usr/local/texlive/2023/texmf-dist/doc/man:$MANPATH"
+# export INFOPATH="/usr/local/texlive/2023/texmf-dist/doc/info:$INFOPATH"
 
 PATH="$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;

@@ -91,20 +91,41 @@ function M.setup()
   -- })
 
 
-  local path = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
-  local words = {}
-
-  for word in io.open(path, "r"):lines() do
-    table.insert(words, word)
-  end
-
-  -- lspconfig.ltex.setup {
+  -- local path = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+  -- local words = {}
+  --
+  -- for word in io.open(path, "r"):lines() do
+  --   table.insert(words, word)
+  -- end
+  -- lspconfig.ltex_plus.setup {
   --   settings = {
   --     ltex = {
-  --       language ="en-GB",
+  --       language = "en-GB",
+  --       diagnosticSeverity = "information",
   --       dictionary = {
-  --         ['en-US'] = words,
   --         ['en-GB'] = words,
+  --       },
+  --     },
+  --   },
+  -- }
+  -- lspconfig.ltex.setup {
+  --   on_attach = on_attach,
+  --   capabilities = capabilities,
+  --   use_spellfile = false,
+  --   filetypes = { "latex", "tex", "bib", "markdown", "gitcommit", "text" },
+  --   settings = {
+  --     ltex = {
+  --       language = "en-GB",
+  --       diagnosticSeverity = "information",
+  --       dictionary = {
+  --         ['en-GB'] = words,
+  --       },
+  --       additionalRules = {
+  --         enablePickyRules = true,
+  --         motherTongue = "en"
+  --       },
+  --       disabledRules = {
+  --         ["en-GB"] = {},
   --       },
   --     },
   --   },
